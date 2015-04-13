@@ -146,11 +146,12 @@
         <h4 id="基本步骤">基本步骤</h4><ul>
 <li><code>$ git init</code> （初始化，创建新的git仓库）</li>
 <li><code>$ git add &lt;filename&gt;</code> （将改动添加到缓存区Index）</li>
-<li><code>$ git add -u</code>（automatically stage tracked files including deleting<br>the previously tracked files）</li>
+<li><code>$ git add -u</code>（automatically stage tracked files including deleting the previously tracked files）</li>
 <li><code>$ git commit -m</code> “改动信息”（实际提交改动到HEAD）</li>
 <li><code>$ git commit -v</code> (可在输入 log 时在下方显示改动内容)</li>
 <li><code>$ git push origin</code> &lt;某个分支&gt;（将本地仓库的改动origin提交到某个分支）</li>
-<li><code>$ git remote add origin &lt;server&gt;</code><br>（如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）</li>
+<li><code>$ git remote add origin &lt;server&gt;</code> （如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）<a id="more"></a>
+</li>
 </ul>
 <h4 id="分支">分支</h4><ul>
 <li><code>$ git checkout -b</code> &lt;分支名&gt;（创建分支并切换过去）</li>
@@ -160,10 +161,15 @@
 <h4 id="更新与合并">更新与合并</h4><ul>
 <li><code>$ git pull</code>（更新本地仓库至最新改动）</li>
 <li><code>$ git merge &lt;branch&gt;</code>（合并其他分支到当前分支）</li>
-<li><code>$ git diff
-&lt;source_branch&gt;&lt;target_branch&gt;</code>（合并时会有冲突conflicts，需要手动修改，用此命令查看不同）</li>
-<li><code>$ git
-mergetool</code>（使用工具修改冲突的文件，推荐<a href="http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools" target="_blank" rel="external">P4merge</a>）</li>
+<li><code>$ git diff &lt;source_branch&gt;&lt;target_branch&gt;</code>（合并时会有冲突conflicts，需要手动修改，用此命令查看不同）</li>
+<li><code>$ git mergetool</code>（使用工具修改冲突的文件，推荐<a href="http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools" target="_blank" rel="external">P4merge</a>）</li>
+</ul>
+<h4 id="查看_log">查看 log</h4><ul>
+<li><code>$ git log -n 1</code> （查看最后一次提交）</li>
+<li><code>$ git log -n 1 --stat</code> （查看最近一次提交所有更改过的文件）</li>
+<li><code>$ git log -n 1 -p</code> （最近一次提交所有更改的细节）</li>
+<li><code>$ git log -p &lt;filename&gt;</code> （某个文件的提交记录）</li>
+<li><code>$ git shortlog [-n] [-s] [-e] [-w] [rev-opts] [--] [... ]</code></li>
 </ul>
 <h4 id="衍合(rebase)">衍合(rebase)</h4><blockquote>
 <p>把在一个分支里提交的改变移到另一个分支里重放一遍.<a href="http://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E8%A1%8D%E5%90%88" target="_blank" rel="external">参考</a></p>
@@ -172,6 +178,16 @@ mergetool</code>（使用工具修改冲突的文件，推荐<a href="http://www
 <li><code>$ git rebase &lt;branch_to_be_rebased&gt;</code></li>
 <li><code>$ git rebase --continue</code>（有时会有冲突，用 mergetool<br>解决后用此命令完成 rebase）</li>
 </ul>
+<h4 id="Submodule">Submodule</h4><blockquote>
+<p>Submodule 的文件只存储在本地，主仓库只存储它的 URL 和它的某个 commit SHA1 值。<br>将某个仓库设为 submodule</p>
+</blockquote>
+<ol>
+<li><code>$ git submodule add git://github.com/my/submodule.git ./submodule</code></li>
+<li><code>$  git submodule update --init</code>  取得新仓库的 submodule</li>
+<li><code>$ git submodule update --recursive --init</code> 取得子仓库的更新</li>
+<li><code>$ cd ./submodule</code></li>
+<li><code>$ git pull origin master</code></li>
+</ol>
 <h4 id="Github_fork_项目后更新">Github fork 项目后更新</h4><ol>
 <li><code>$ git remote add upstream https://原始项目地址</code></li>
 <li><code>$ git fetch upstream</code></li>
@@ -192,10 +208,10 @@ mergetool</code>（使用工具修改冲突的文件，推荐<a href="http://www
 <li><code>$ git reset --hard &lt;commit_id&gt;</code></li>
 <li><code>$ git push origin HEAD --force</code></li>
 <li>根据 –soft –mixed –hard，会对working tree和index和HEAD进行重置:<ul>
-<li>git reset –mixed：此为默认方式，不带任何参数的git reset，回退到某个版本，只保留源码，回退commit和index信息</li>
-<li>git reset –soft：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可</li>
-<li>git reset –hard：彻底回退到某个版本，本地的源码也会变为上一个版本的内容<blockquote>
-<p>HEAD 最近一个提交<br>HEAD^ 上一个提交<br><commit_id> 每次commit的SHA1值. 可以用<code>git log</code>看到,也可以在页面上commit标签页里找到.</commit_id></p>
+<li><code>git reset –mixed</code>：此为默认方式，不带任何参数的git reset，回退到某个版本，只保留源码，回退commit和index信息</li>
+<li><code>git reset –soft</code>：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可</li>
+<li><code>git reset –hard</code>：彻底回退到某个版本，本地的源码也会变为上一个版本的内容<blockquote>
+<p>HEAD 最近一个提交<br>HEAD^ 上一个提交<br><commit_id> 每次commit的SHA1值. 可以用<code>git log</code>看到,也可以在commit标签页里找到.</commit_id></p>
 </blockquote>
 </li>
 </ul>
@@ -375,7 +391,7 @@ user.email=email@address.com commit --amend --reset-author</code></li>
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本步骤"><span class="nav-number">1.</span> <span class="nav-text">基本步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分支"><span class="nav-number">2.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新与合并"><span class="nav-number">3.</span> <span class="nav-text">更新与合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#衍合(rebase)"><span class="nav-number">4.</span> <span class="nav-text">衍合(rebase)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Github_fork_项目后更新"><span class="nav-number">5.</span> <span class="nav-text">Github fork 项目后更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改远程仓库地址"><span class="nav-number">6.</span> <span class="nav-text">修改远程仓库地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git回滾"><span class="nav-number">7.</span> <span class="nav-text">Git回滾</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Changing_the_Last_Commit_Message"><span class="nav-number">8.</span> <span class="nav-text">Changing the Last Commit Message</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cleaning_up_local_repository"><span class="nav-number">9.</span> <span class="nav-text">Cleaning up local repository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Specifying_Dates"><span class="nav-number">10.</span> <span class="nav-text">Specifying Dates</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Change_the_author_of_a_commit"><span class="nav-number">11.</span> <span class="nav-text">Change the author of a commit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他:"><span class="nav-number">12.</span> <span class="nav-text">其他:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本步骤"><span class="nav-number">1.</span> <span class="nav-text">基本步骤</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分支"><span class="nav-number">2.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新与合并"><span class="nav-number">3.</span> <span class="nav-text">更新与合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看_log"><span class="nav-number">4.</span> <span class="nav-text">查看 log</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#衍合(rebase)"><span class="nav-number">5.</span> <span class="nav-text">衍合(rebase)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Submodule"><span class="nav-number">6.</span> <span class="nav-text">Submodule</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Github_fork_项目后更新"><span class="nav-number">7.</span> <span class="nav-text">Github fork 项目后更新</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改远程仓库地址"><span class="nav-number">8.</span> <span class="nav-text">修改远程仓库地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git回滾"><span class="nav-number">9.</span> <span class="nav-text">Git回滾</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Changing_the_Last_Commit_Message"><span class="nav-number">10.</span> <span class="nav-text">Changing the Last Commit Message</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cleaning_up_local_repository"><span class="nav-number">11.</span> <span class="nav-text">Cleaning up local repository</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Specifying_Dates"><span class="nav-number">12.</span> <span class="nav-text">Specifying Dates</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Change_the_author_of_a_commit"><span class="nav-number">13.</span> <span class="nav-text">Change the author of a commit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其他:"><span class="nav-number">14.</span> <span class="nav-text">其他:</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
