@@ -1,0 +1,684 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.2"/>
+
+
+
+
+  <meta name="keywords" content="Hexo,next" />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.2" />
+
+
+
+
+  <title> boooo </title>
+</head>
+
+<body>
+  <div class="container one-column 
+   page-home 
+">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">boooo</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
+     
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首页
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          归档
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          标签
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+  <div id="posts" class="posts-expand">
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/03/10/hello-hexo/">
+                Hello Hexo
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-03-09
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/03/10/hello-hexo/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2015/03/10/hello-hexo/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <p>耳闻 <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a> 已久，正好前几天看到<a href="http://hexo.io/news/2015/03/05/hexo-3-0-released/" target="_blank" rel="external">3.0发布</a>，似乎很好玩的样子，好久没折腾，那就搞起吧~<br>陆续要把一些笔记转到这里来，又有一会折腾了，想想都有点小激动呢~<br>再去搞个域名，一切就完美了 ：]</p>
+
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2012/12/28/Git-note/">
+                Git 笔记
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2012-12-28
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/Git/">Git</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2012/12/28/Git-note/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2012/12/28/Git-note/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h4 id="基本步骤">基本步骤</h4><ul>
+<li><code>$ git init</code> （初始化，创建新的git仓库）</li>
+<li><code>$ git add &lt;filename&gt;</code> （将改动添加到缓存区Index）</li>
+<li><code>$ git add -u</code>（automatically stage tracked files including deleting<br>the previously tracked files）</li>
+<li><code>$ git commit -m</code> “改动信息”（实际提交改动到HEAD）</li>
+<li><code>$ git commit -v</code> (可在输入 log 时在下方显示改动内容)</li>
+<li><code>$ git push origin</code> &lt;某个分支&gt;（将本地仓库的改动origin提交到某个分支）</li>
+<li><code>$ git remote add origin &lt;server&gt;</code><br>（如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）</li>
+</ul>
+<h4 id="分支">分支</h4><ul>
+<li><code>$ git checkout -b</code> &lt;分支名&gt;（创建分支并切换过去）</li>
+<li><code>$ git checkout master</code>（切换回master分支）</li>
+<li><code>$ git branch -d</code> &lt;分支名&gt;（删除某分支）</li>
+</ul>
+<h4 id="更新与合并">更新与合并</h4><ul>
+<li><code>$ git pull</code>（更新本地仓库至最新改动）</li>
+<li><code>$ git merge &lt;branch&gt;</code>（合并其他分支到当前分支）</li>
+<li><code>$ git diff
+&lt;source_branch&gt;&lt;target_branch&gt;</code>（合并时会有冲突conflicts，需要手动修改，用此命令查看不同）</li>
+<li><code>$ git
+mergetool</code>（使用工具修改冲突的文件，推荐<a href="http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools" target="_blank" rel="external">P4merge</a>）</li>
+</ul>
+<h4 id="衍合(rebase)">衍合(rebase)</h4><blockquote>
+<p>把在一个分支里提交的改变移到另一个分支里重放一遍.<a href="http://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E8%A1%8D%E5%90%88" target="_blank" rel="external">参考</a></p>
+</blockquote>
+<ul>
+<li><code>$ git rebase &lt;branch_to_be_rebased&gt;</code></li>
+<li><code>$ git rebase --continue</code>（有时会有冲突，用 mergetool<br>解决后用此命令完成 rebase）</li>
+</ul>
+<h4 id="Github_fork_项目后更新">Github fork 项目后更新</h4><ol>
+<li><code>$ git remote add upstream https://原始项目地址</code></li>
+<li><code>$ git fetch upstream</code></li>
+<li><code>$ git checkout master</code></li>
+<li><code>$ git merge upstream/master</code></li>
+<li><code>$ git push</code></li>
+</ol>
+<h4 id="修改远程仓库地址">修改远程仓库地址</h4><ol>
+<li>先查看改名前的URL下的版本名：<code>$ git remote -v</code></li>
+<li>然后设置新的URL：<code>$ git remote set -url 版本名 新的URL</code></li>
+<li>或者删掉原来的版本，再add进新的URL：<ol>
+<li><code>$ git remote rm 版本名</code></li>
+<li><code>$ git remote add 版本名 新的URL</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="Git回滾">Git回滾</h4><ol>
+<li><code>$ git reset --hard &lt;commit_id&gt;</code></li>
+<li><code>$ git push origin HEAD --force</code></li>
+<li>根据 –soft –mixed –hard，会对working tree和index和HEAD进行重置:<ul>
+<li>git reset –mixed：此为默认方式，不带任何参数的git reset，回退到某个版本，只保留源码，回退commit和index信息</li>
+<li>git reset –soft：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可</li>
+<li>git reset –hard：彻底回退到某个版本，本地的源码也会变为上一个版本的内容<blockquote>
+<p>HEAD 最近一个提交<br>HEAD^ 上一个提交<br><commit_id> 每次commit的SHA1值. 可以用<code>git log</code>看到,也可以在页面上commit标签页里找到.</commit_id></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Changing_the_Last_Commit_Message">Changing the Last Commit Message</h4><ul>
+<li><code>$ git commit --amend</code></li>
+</ul>
+<h4 id="Cleaning_up_local_repository">Cleaning up local repository</h4><ul>
+<li><code>$ git gc --prune=now</code></li>
+<li><code>$ git remote prune origin</code></li>
+</ul>
+<h4 id="Specifying_Dates">Specifying Dates</h4><ul>
+<li><code>$ GIT_AUTHOR_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;
+GIT_COMMITTER_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot; git commit -v</code></li>
+<li><code>$ GIT_AUTHOR_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;
+GIT_COMMITTER_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot; git commit --amend
+--date=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;</code></li>
+</ul>
+<h4 id="Change_the_author_of_a_commit">Change the author of a commit</h4><ol>
+<li><code>$ git rebase -i -p &lt;some HEAD before all of your bad commits&gt;</code></li>
+<li>标记需要更改的 commit 为 <code>edit</code></li>
+<li><code>$ git commit --amend --author=&quot;New Author Name &lt;email@address.com&gt;&quot;</code><ol>
+<li>如果只需要改上一个 commit，执行这一步就可以了，不需要 rebase</li>
+<li>如果要同时改变 author 和 committer：<br><code>$ git -c user.name=&quot;New Author Name&quot; -c
+user.email=email@address.com commit --amend --reset-author</code></li>
+</ol>
+</li>
+<li><code>$ git rebase --continue</code></li>
+</ol>
+<h4 id="其他:">其他:</h4><ul>
+<li><p>类似错误：</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">! bacca66..<span class="number">6</span>b9508a custom/<span class="number">100</span>acc -&gt; origin/custom/<span class="number">100</span>acc (unable to</span><br><span class="line">update local <span class="keyword">ref</span>)</span><br><span class="line">error: <span class="type">Ref</span> refs/remotes/origin/custom/<span class="number">985</span> <span class="keyword">is</span> at</span><br><span class="line">a2a6e32bfcef6e429c5e42fc7973f1d6e57eaae8 but expected</span><br><span class="line">d3c05036b295f6539870683e4c794cd9c3ae1579</span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>$ rm .git/refs/remotes/origin/custom/100acc</code></li>
+<li><code>$ git fetch --prune origin</code></li>
+</ol>
+</li>
+</ul>
+
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Git/"> #Git </a>
+          
+        </div>
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+  </div>
+
+  
+
+        </div>
+      </div>
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="http://boooo.qiniudn.com/avatar.gif" alt="xiaobo" />
+          <p class="site-author-name">xiaobo</p>
+        </div>
+        <p class="site-description motion-element"></p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/zhugexiaobo" target="_blank">GitHub</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="https://twitter.com/Wisdom90s" target="_blank">Twitter</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/83339326" target="_blank">Weibo</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+      </div>
+
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp;  2012 - 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">xiaobo</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.content img').each(function () {
+        var $image = $(this);
+        var $imageWrapLink = $image.parent('a');
+
+        if ($imageWrapLink.size() < 1) {
+          $imageWrapLink = $image.wrap('<a href="' + this.getAttribute('src') + '"></a>').parent('a');
+        }
+        $imageWrapLink.addClass('fancybox');
+      });
+    });
+    $('.fancybox').fancybox({
+      helpers: {
+        overlay: {
+          locked: false
+        }
+      }
+    });
+  </script>
+
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    LogoAndMenuMotion();
+    sidebatToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+    function LogoAndMenuMotion() {
+      $.Velocity.RunSequence([
+        { e: $('.brand'), p: { opacity: 1 }, o: { duration: 100 } },
+        { e: $('.logo'), p: { opacity: 1, top: 0 }, o: { duration: 50} },
+        
+        { e: $('.logo-line-before i'), p: { translateX: "100%" }, o: { duration: 500, sequenceQueue: false } },
+        { e: $('.logo-line-after i'), p: { translateX: "-100%" }, o: { duration: 500, sequenceQueue: false } },
+        
+        { e: $('.site-title'), p: { opacity: 1, top: 0 }, o: { duration: 200 } }
+      ]);
+      $('.menu-item').velocity('transition.slideDownIn', {display: null});
+    }
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        display: 'block',
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      var postMotionOptions = window.postMotionOptions || {stagger: 300, drag: true};
+      $('.post').velocity('transition.slideDownIn', postMotionOptions);
+    }
+
+    function sidebatToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"boooo"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+  <script type="text/javascript">
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-40713869-2');ga('send','pageview');
+  </script>
+
+</body>
+</html>
