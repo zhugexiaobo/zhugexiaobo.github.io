@@ -9,7 +9,7 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url("fonts/OpenSans/opensans-regular-webfont.woff") format('woff'), url("fonts/OpenSans/opensans-regular-webfont.woff2") format('woff2'), url("fonts/OpenSans/opensans-regular-webfont.ttf") format('ttf'), url("fonts/OpenSans/opensans-regular-webfont.svg") format('svg'), url("fonts/OpenSans/opensans-regular-webfont.eot") format('eot');
+  src: local('Open Sans'), local('OpenSans'), url("fonts/opensans-regular-webfont.woff") format('woff'), url("fonts/opensans-regular-webfont.woff2") format('woff2'), url("fonts/opensans-regular-webfont.ttf") format('ttf'), url("fonts/opensans-regular-webfont.svg") format('svg'), url("fonts/opensans-regular-webfont.eot") format('eot');
 }
 html,
 body,
