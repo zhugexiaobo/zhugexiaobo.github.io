@@ -34,6 +34,19 @@
 
 </script>
 
+
+<!--增加swiftype搜索功能-->
+
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+  (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+  e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+  _st('install','1XrhJi69FJsTavwDod3x');
+</script>
+
+<!--增加swiftype搜索功能end-->
 </head>
 <body>
   <div id="container">
@@ -52,19 +65,10 @@
 		</ul>
 	</nav>
 	<div id="search-form-wrap">
-		<form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://rensisi.com"></form>
-	    <!--增加swiftype搜索功能-->
-	    
-	    <script type="text/javascript">
-	      (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
-	      (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
-	      e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
-	      })(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
-
-	      _st('install','1XrhJi69FJsTavwDod3x');
-	    </script>
-	    
-	    <!--增加swiftype搜索功能end-->
+		<form class="search-form">
+			<input type="search" class="search-form-input">
+			<input type="submit" value="&#xF002" class="search-form-submit">
+		</form>
 	</div>
 </header>
 
@@ -131,9 +135,8 @@
 
     </div>
     <div class="mb-search">
-  <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
-    <input type="hidden" name="q" value="site:rensisi.com">
+  <form >
+    <input type="search" class="search-form-input" placeholder="Search">
   </form>
 </div>
 <footer id="footer">
@@ -146,9 +149,10 @@
 		Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
 	</span>
 </footer>
+
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
@@ -156,6 +160,7 @@
 
 
 <script src="/js/script.js" type="text/javascript"></script>
+
   </div>
 </body>
 </html>
