@@ -1,16 +1,6 @@
 @charset "utf-8";
-@font-face {
-  font-family: 'Source Code Pro';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Source Code Pro'), local('SourceCodePro-Regular'), url("fonts/SouceCodePro/sourcecodepro-regular-webfont.woff") format('woff'), url("fonts/SouceCodePro/sourcecodepro-regular-webfont.woff2") format('woff2'), url("fonts/SouceCodePro/sourcecodepro-regular-webfont.ttf") format('ttf'), url("fonts/SouceCodePro/sourcecodepro-regular-webfont.svg") format('svg'), url("fonts/SouceCodePro/sourcecodepro-regular-webfont.eot") format('eot');
-}
-@font-face {
-  font-family: 'Open Sans';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Open Sans'), local('OpenSans'), url("fonts/opensans-regular-webfont.woff") format('woff'), url("fonts/opensans-regular-webfont.woff2") format('woff2'), url("fonts/opensans-regular-webfont.ttf") format('ttf'), url("fonts/opensans-regular-webfont.svg") format('svg'), url("fonts/opensans-regular-webfont.eot") format('eot');
-}
+@import url("//fonts.useso.com/css?family=Source+Code+Pro");
+@import url("//fonts.useso.com/css?family=Open+Sans:400,700");
 html,
 body,
 div,
