@@ -98,7 +98,7 @@
     <link href="http://rensisi.com/2014/01/04/2013-summary/"/>
     <id>http://rensisi.com/2014/01/04/2013-summary/</id>
     <published>2014-01-03T16:00:00.000Z</published>
-    <updated>2015-11-25T12:38:29.000Z</updated>
+    <updated>2015-11-25T12:49:02.000Z</updated>
     <content type="html"><![CDATA[<h2 id="值得一记">值得一记</h2><ul>
 <li>上架2个 iOS 应用</li>
 <li>Scrum master 半年</li>
@@ -122,7 +122,7 @@
 <ul>
 <li>使用了当时较流行的 <a href="https://github.com/Grouper/FlatUIKit" target="_blank" rel="external">FlatUIKit</a> 写界面，很喜欢这种舒服的扁平风格，虽然代码稍显臃肿，但归置得当还是一目了然的，而且免去贴图，省事</li>
 <li>二维码扫描用的 <a href="http://sourceforge.net/projects/zbar/files/iPhoneSDK/beta/" target="_blank" rel="external">ZBarSDK</a>，可扫各种码，集成使用简单（ZBarReaderViewController），对扫描界面的定制支持也不错（ZBarReaderView）。不过似乎停止更新了，iOS7 也增加了二维码扫描功能。</li>
-<li>定位碰到了一个大坑——「<a href="http://www.rensisi.com/2013/06/27/ios-mars-coordinate.html" target="_blank" rel="external">火星座标</a>」，好在先烈们提供了方案</li>
+<li>定位碰到了一个大坑——「<a href="/2013/06/27/iOS-mars-coordinate">火星座标</a>」，好在先烈们提供了方案</li>
 <li>显示倒计时这个模块写的不太好，计算剩余时间考虑不周全，造成几个 BUG</li>
 <li>本地通知这个功能蛮有意思</li>
 </ul>
@@ -165,6 +165,104 @@
 <li>在 Evernote 中记录了220篇技术笔记</li>
 <li>熟练 Git 及其理念</li>
 <li>Vim 入门]]>
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://rensisi.com/tags/iOS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[iOS 火星坐标问题]]></title>
+    <link href="http://rensisi.com/2013/06/27/iOS-mars-coordinate/"/>
+    <id>http://rensisi.com/2013/06/27/iOS-mars-coordinate/</id>
+    <published>2013-06-26T16:00:00.000Z</published>
+    <updated>2015-11-25T12:44:23.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="3种坐标">3种坐标</h4><ul>
+<li><a href="http://zh.wikipedia.org/wiki/WGS84" target="_blank" rel="external">地球坐标（WGS84）</a><ul>
+<li>国际标准，GPS 标准从 GPS 设备中取出的原始数据是就是这个</li>
+<li>国际地图提供商一般使用的也是这个</li>
+</ul>
+</li>
+<li><a href="http://baike.baidu.com/view/5669921.htm" target="_blank" rel="external">火星坐标（GCJ-02）</a><ul>
+<li>中国标准，行货 GPS 设备取出的最终数据是这个</li>
+<li>加入随机的偏差</li>
+<li>国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。</li>
+</ul>
+</li>
+<li><a href="http://developer.baidu.com/map/question.htm#qa004" target="_blank" rel="external">百度坐标 (BD-09)</a><ul>
+<li>百度标准，在 GCJ-02 基础上，进行了 BD-09 二次加密</li>
+<li>需要通过坐标转换接口进行转换</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h4 id="iOS_现状">iOS 现状</h4><ul>
+<li>获取经纬度（GPS）<ul>
+<li>火星坐标 <code>MKMapView</code></li>
+<li>地球坐标 <code>CLLocationManager</code></li>
+</ul>
+</li>
+<li>显示经纬度（地图）<ul>
+<li>火星坐标<ul>
+<li>iOS 地图</li>
+<li>Google 地图</li>
+<li>高德、搜搜、阿里云等</li>
+</ul>
+</li>
+<li>地球坐标<ul>
+<li>Google earth（国外地图应该都是）</li>
+</ul>
+</li>
+<li>百度坐标<ul>
+<li>百度地图</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="解决方案">解决方案</h4><ul>
+<li>国内存储用火星坐标，百度地图可以转换为火星坐标</li>
+<li><code>CLLocationManager</code> 获取的坐标转换为火星坐标，算法 <a href="https://gist.github.com/i0xbean/5476132" target="_blank" rel="external">CLLocation+Sino</a></li>
+<li>几个互相转换算法<ul>
+<li>地图坐标 -&gt; 火星坐标：<a href="http://blog.csdn.net/coolypf/article/details/8686588" target="_blank" rel="external">地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法</a></li>
+<li>火星坐标 &lt;-&gt; 百度坐标：<a href="http://blog.woodbunny.com/post-68.html" target="_blank" rel="external">火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换算法</a></li>
+<li>火星坐标 -&gt; 地球坐标：<ul>
+<li><del>iOS 私有 API <code>_applyChinaLocationShift:</code></del>（已不可用）</li>
+<li>通过不断采样的方式建立一个纠偏数据库，数据库随着采样精度的不同大小差距很大，据说有人做个了近1G的数据库。我自己用的一个100KB左右的数据库感觉效果就很不错了，采样精度为每0.5经(纬)度采样一次。目前该数据库在网上有流传。</li>
+<li>据说有人使用Matlib对数据库做了个拟合函数，本人无力没搜到这个函数，求补充</li>
+<li>使用第三方的网络API，如MapABC，原来Google也有不过现在已经关闭了。这样会使得定位依赖于网络。</li>
+<li>使用经过国家授权的校偏组件⋯⋯</li>
+<li>让用户手动修正，对于某些特定应用也许是种不错的方法。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Links">Links</h4><ul>
+<li><a href="http://yach.me/blog/2011/11/09/huo-xing-zuo-biao-xi-wen-ti-zai-iosxia-de-xiu/" target="_blank" rel="external">火星坐标系问题在iOS下的修正</a></li>
+<li><a href="http://blog.woodbunny.com/post-67.html" target="_blank" rel="external">借助百度地图转换火星坐标的研究</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="3种坐标">3种坐标</h4><ul>
+<li><a href="http://zh.wikipedia.org/wiki/WGS84">地球坐标（WGS84）</a><ul>
+<li>国际标准，GPS 标准从 GPS 设备中取出的原始数据是就是这个</li>
+<li>国际地图提供商一般使用的也是这个</li>
+</ul>
+</li>
+<li><a href="http://baike.baidu.com/view/5669921.htm">火星坐标（GCJ-02）</a><ul>
+<li>中国标准，行货 GPS 设备取出的最终数据是这个</li>
+<li>加入随机的偏差</li>
+<li>国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。</li>
+</ul>
+</li>
+<li><a href="http://developer.baidu.com/map/question.htm#qa004">百度坐标 (BD-09)</a><ul>
+<li>百度标准，在 GCJ-02 基础上，进行了 BD-09 二次加密</li>
+<li>需要通过坐标转换接口进行转换</li>
+</ul>
+</li>
+</ul>]]>
     
     </summary>
     

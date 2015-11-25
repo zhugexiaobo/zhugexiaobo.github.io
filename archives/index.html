@@ -8,7 +8,24 @@
 <li>参加「<a href="http://segmentfault.com/e/geekon-2013">极客行动</a>」并完成一个公益项目</li>
 <li>在 Evernote 中记录了220篇技术笔记</li>
 <li>熟练 Git 及其理念</li>
-<li>Vim 入门</div><a href="2014/01/04/2013-summary/" class="read-more">... more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2012/12/28/Git-note/" class="post-title-link">Git 笔记</a></h2><div class="post-meta"><div class="post-time">Dec 28, 2012</div></div><div class="post-content"><h4 id="基本步骤">基本步骤</h4><ul>
+<li>Vim 入门</div><a href="2014/01/04/2013-summary/" class="read-more">... more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2013/06/27/iOS-mars-coordinate/" class="post-title-link">iOS 火星坐标问题</a></h2><div class="post-meta"><div class="post-time">Jun 27, 2013</div></div><div class="post-content"><h4 id="3种坐标">3种坐标</h4><ul>
+<li><a href="http://zh.wikipedia.org/wiki/WGS84">地球坐标（WGS84）</a><ul>
+<li>国际标准，GPS 标准从 GPS 设备中取出的原始数据是就是这个</li>
+<li>国际地图提供商一般使用的也是这个</li>
+</ul>
+</li>
+<li><a href="http://baike.baidu.com/view/5669921.htm">火星坐标（GCJ-02）</a><ul>
+<li>中国标准，行货 GPS 设备取出的最终数据是这个</li>
+<li>加入随机的偏差</li>
+<li>国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。</li>
+</ul>
+</li>
+<li><a href="http://developer.baidu.com/map/question.htm#qa004">百度坐标 (BD-09)</a><ul>
+<li>百度标准，在 GCJ-02 基础上，进行了 BD-09 二次加密</li>
+<li>需要通过坐标转换接口进行转换</li>
+</ul>
+</li>
+</ul></div><a href="2013/06/27/iOS-mars-coordinate/" class="read-more">... more</a></article></li><li class="post-list-item"><article class="post-block"><h2 class="post-title"><a href="/2012/12/28/Git-note/" class="post-title-link">Git 笔记</a></h2><div class="post-meta"><div class="post-time">Dec 28, 2012</div></div><div class="post-content"><h4 id="基本步骤">基本步骤</h4><ul>
 <li><code>$ git init</code> （初始化，创建新的git仓库）</li>
 <li><code>$ git add &lt;filename&gt;</code> （将改动添加到缓存区Index）</li>
 <li><code>$ git add -u</code>（automatically stage tracked files including deleting the previously tracked files）</li>

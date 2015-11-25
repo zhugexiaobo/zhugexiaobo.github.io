@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> iOS 火星坐标问题 · BOOOO</title><meta name="description" content="3种坐标
+地球坐标（WGS84）
+国际标准，GPS 标准从 GPS 设备中取出的原始数据是就是这个
+国际地图提供商一般使用的也是这个
+
+
+火星坐标（GCJ-02）
+中国标准，行货 GPS 设备取出的最终数据是这个
+加入随机的偏差
+国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。
+
+
+百度坐标 (BD-09)
+百度标准，在 GCJ-02 基础上，进行了 BD-09 二次加密
+需要通过坐标转"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/zhugexiaobo" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/zhugexiaobo" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h2 class="post-title"><a href="/2013/06/27/iOS-mars-coordinate/" class="post-title-link">iOS 火星坐标问题</a></h2><div class="post-meta"><div class="post-time">Jun 27, 2013</div></div><div class="post-content"><h4 id="3种坐标">3种坐标</h4><ul>
+<li><a href="http://zh.wikipedia.org/wiki/WGS84" target="_blank" rel="external">地球坐标（WGS84）</a><ul>
+<li>国际标准，GPS 标准从 GPS 设备中取出的原始数据是就是这个</li>
+<li>国际地图提供商一般使用的也是这个</li>
+</ul>
+</li>
+<li><a href="http://baike.baidu.com/view/5669921.htm" target="_blank" rel="external">火星坐标（GCJ-02）</a><ul>
+<li>中国标准，行货 GPS 设备取出的最终数据是这个</li>
+<li>加入随机的偏差</li>
+<li>国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。</li>
+</ul>
+</li>
+<li><a href="http://developer.baidu.com/map/question.htm#qa004" target="_blank" rel="external">百度坐标 (BD-09)</a><ul>
+<li>百度标准，在 GCJ-02 基础上，进行了 BD-09 二次加密</li>
+<li>需要通过坐标转换接口进行转换</li>
+</ul>
+</li>
+</ul>
+<a id="more"></a>
+<h4 id="iOS_现状">iOS 现状</h4><ul>
+<li>获取经纬度（GPS）<ul>
+<li>火星坐标 <code>MKMapView</code></li>
+<li>地球坐标 <code>CLLocationManager</code></li>
+</ul>
+</li>
+<li>显示经纬度（地图）<ul>
+<li>火星坐标<ul>
+<li>iOS 地图</li>
+<li>Google 地图</li>
+<li>高德、搜搜、阿里云等</li>
+</ul>
+</li>
+<li>地球坐标<ul>
+<li>Google earth（国外地图应该都是）</li>
+</ul>
+</li>
+<li>百度坐标<ul>
+<li>百度地图</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="解决方案">解决方案</h4><ul>
+<li>国内存储用火星坐标，百度地图可以转换为火星坐标</li>
+<li><code>CLLocationManager</code> 获取的坐标转换为火星坐标，算法 <a href="https://gist.github.com/i0xbean/5476132" target="_blank" rel="external">CLLocation+Sino</a></li>
+<li>几个互相转换算法<ul>
+<li>地图坐标 -&gt; 火星坐标：<a href="http://blog.csdn.net/coolypf/article/details/8686588" target="_blank" rel="external">地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法</a></li>
+<li>火星坐标 &lt;-&gt; 百度坐标：<a href="http://blog.woodbunny.com/post-68.html" target="_blank" rel="external">火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换算法</a></li>
+<li>火星坐标 -&gt; 地球坐标：<ul>
+<li><del>iOS 私有 API <code>_applyChinaLocationShift:</code></del>（已不可用）</li>
+<li>通过不断采样的方式建立一个纠偏数据库，数据库随着采样精度的不同大小差距很大，据说有人做个了近1G的数据库。我自己用的一个100KB左右的数据库感觉效果就很不错了，采样精度为每0.5经(纬)度采样一次。目前该数据库在网上有流传。</li>
+<li>据说有人使用Matlib对数据库做了个拟合函数，本人无力没搜到这个函数，求补充</li>
+<li>使用第三方的网络API，如MapABC，原来Google也有不过现在已经关闭了。这样会使得定位依赖于网络。</li>
+<li>使用经过国家授权的校偏组件⋯⋯</li>
+<li>让用户手动修正，对于某些特定应用也许是种不错的方法。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="Links">Links</h4><ul>
+<li><a href="http://yach.me/blog/2011/11/09/huo-xing-zuo-biao-xi-wen-ti-zai-iosxia-de-xiu/" target="_blank" rel="external">火星坐标系问题在iOS下的修正</a></li>
+<li><a href="http://blog.woodbunny.com/post-67.html" target="_blank" rel="external">借助百度地图转换火星坐标的研究</a></li>
+</ul>
+</div></article></div></section><footer><div class="paginator"><a href="/2014/01/04/2013-summary/" class="prev">上一篇</a><a href="/2012/12/28/Git-note/" class="next">下一篇</a></div><div data-thread-key="2013/06/27/iOS-mars-coordinate/" data-title="iOS 火星坐标问题" data-url="http://rensisi.com/2013/06/27/iOS-mars-coordinate/" data-author-key="1" class="ds-thread"></div><script>var duoshuoQuery = {short_name:"boooo"};
+(function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+     || document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+
+</script></footer><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-40713869-2",'auto');ga('send','pageview');</script><script>var _hmt = _hmt || [];(function() {var hm = document.createElement("script");hm.src = "//hm.baidu.com/hm.js?fd5a0b6a1fa5b60d03d37357056797f4";var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();</script><script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script></body></html>
