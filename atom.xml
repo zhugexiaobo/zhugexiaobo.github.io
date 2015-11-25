@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[BOOOO]]></title>
+  
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://rensisi.com/"/>
+  <updated>2015-11-25T06:58:51.000Z</updated>
+  <id>http://rensisi.com/</id>
+  
+  <author>
+    <name><![CDATA[xiaobo]]></name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hello Hexo]]></title>
+    <link href="http://rensisi.com/2015/03/10/hello-hexo/"/>
+    <id>http://rensisi.com/2015/03/10/hello-hexo/</id>
+    <published>2015-03-09T16:00:00.000Z</published>
+    <updated>2015-11-25T06:58:51.000Z</updated>
+    <content type="html"><![CDATA[<p>耳闻 <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a> 已久，正好前几天看到<a href="http://hexo.io/news/2015/03/05/hexo-3-0-released/" target="_blank" rel="external">3.0发布</a>，似乎很好玩的样子，好久没折腾，那就搞起吧~<br><a id="more"></a><br>陆续要把一些笔记转到这里来，又有一会折腾了，想想都有点小激动呢~<br>再去搞个域名，一切就完美了 ：]</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>耳闻 <a href="https://github.com/hexojs/hexo">Hexo</a> 已久，正好前几天看到<a href="http://hexo.io/news/2015/03/05/hexo-3-0-released/">3.0发布</a>，似乎很好玩的样子，好久没折腾，那就搞起吧~<br>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[代码行数统计]]></title>
+    <link href="http://rensisi.com/2014/08/11/code-line-counting/"/>
+    <id>http://rensisi.com/2014/08/11/code-line-counting/</id>
+    <published>2014-08-10T16:00:00.000Z</published>
+    <updated>2015-11-25T06:56:38.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="Terminal_shell_命令">Terminal shell 命令</h3><ul>
+<li>统计当前目录下 <code>.m</code> 文件的代码行数</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">"*.m"</span> | xargs wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<ul>
+<li>在当前目录统计 <code>.h</code>、<code>.m</code>、<code>.xib</code>、<code>.c</code> 文件中的代码行数</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">"*.m"</span> -o -name <span class="string">"*.h"</span> -o -name <span class="string">"*.xib"</span> -o -name <span class="string">"*.c"</span> | xargs wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>排除某个目录下的文件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -path <span class="string">'./*/Vendors'</span> -prune -o -name <span class="string">"*.m"</span> -o -name <span class="string">"*.h"</span> -o -name <span class="string">"*.xib"</span> -o -name <span class="string">"*.c"</span> | xargs wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>排除多个目录，注意空格</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . \( -path <span class="string">'./*/Vendors'</span> -o -path <span class="string">'./*/Crashlytics.framework'</span> \) -prune -o -name <span class="string">"*.m"</span> -o -name <span class="string">"*.h"</span> -o -name <span class="string">"*.xib"</span> -o -name <span class="string">"*.c"</span> | xargs wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>排除空行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . \( -path <span class="string">'./*/Vendors'</span> -o -path <span class="string">'./*/Crashlytics.framework'</span> \) -prune -o -name <span class="string">"*.m"</span> -o -name <span class="string">"*.h"</span> -o -name <span class="string">"*.xib"</span> -o -name <span class="string">"*.c"</span> | xargs grep -v <span class="string">"^$"</span> | wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>排除 <code>/</code> 开头的注释</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . \( -path <span class="string">'./*/Vendors'</span> -o -path <span class="string">'./*/Crashlytics.framework'</span> \) -prune -o -name <span class="string">"*.m"</span> -o -name <span class="string">"*.h"</span> -o -name <span class="string">"*.xib"</span> -o -name <span class="string">"*.c"</span> | xargs grep -v <span class="operator">-e</span> <span class="string">"^$"</span> <span class="operator">-e</span> <span class="string">"^\s*\/.*$"</span> | wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
+<h3 id="Sublime_Text_正则搜索">Sublime Text 正则搜索</h3><ul>
+<li>统计打开的目录下所有代码行数</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find: ^.*$</span><br></pre></td></tr></table></figure>
+<ul>
+<li>统计打开的目录下所有代码行数并去除空行</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find: ^[ \t]*[^ \t\n\r]+.*$</span><br></pre></td></tr></table></figure>
+<ul>
+<li>统计打开的目录下所有代码行数并排除空行和注释行(包括<code>/</code> 和 <code>#</code>，<code>?</code> 不是必需的)</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find: ^[ \t]*?[^ \t\n\r/<span class="comment">#]+?.*$</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>统计特定文件并排除特定文件夹</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Find: ^[ \t]*?[^ \t\n\r/<span class="comment">#]+?.*$</span></span><br><span class="line">Where: *.h, *.m, *.xib, -*/Vendors/*</span><br></pre></td></tr></table></figure>
+<hr>
+<p>参考：</p>
+<ul>
+<li><a href="http://hittyt.iteye.com/blog/1700584" target="_blank" rel="external">一句shell命令搞定代码行数统计</a></li>
+<li><a href="http://zhouhua.github.io/2013/06/20/skills/" target="_blank" rel="external">统计代码行数的小技巧 </a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="Terminal_shell_命令">Terminal shell 命令</h3><ul>
+<li>统计当前目录下 <code>.m</code> 文件的代码行数</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">"*.m"</span> | xargs wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>]]>
+    
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Git 笔记]]></title>
+    <link href="http://rensisi.com/2012/12/28/Git-note/"/>
+    <id>http://rensisi.com/2012/12/28/Git-note/</id>
+    <published>2012-12-28T03:36:25.000Z</published>
+    <updated>2015-05-20T07:30:58.000Z</updated>
+    <content type="html"><![CDATA[<h4 id="基本步骤">基本步骤</h4><ul>
+<li><code>$ git init</code> （初始化，创建新的git仓库）</li>
+<li><code>$ git add &lt;filename&gt;</code> （将改动添加到缓存区Index）</li>
+<li><code>$ git add -u</code>（automatically stage tracked files including deleting the previously tracked files）</li>
+<li><code>$ git commit -m</code> “改动信息”（实际提交改动到HEAD）</li>
+<li><code>$ git commit -v</code> (可在输入 log 时在下方显示改动内容)</li>
+<li><code>$ git push origin</code> &lt;某个分支&gt;（将本地仓库的改动origin提交到某个分支）</li>
+<li><code>$ git remote add origin &lt;server&gt;</code> （如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）<a id="more"></a>
+</li>
+</ul>
+<h4 id="分支">分支</h4><ul>
+<li><code>$ git checkout -b</code> &lt;分支名&gt;（创建分支并切换过去）</li>
+<li><code>$ git checkout master</code>（切换回master分支）</li>
+<li><code>$ git branch -d</code> &lt;分支名&gt;（删除某分支）</li>
+</ul>
+<h4 id="更新与合并">更新与合并</h4><ul>
+<li><code>$ git pull</code>（更新本地仓库至最新改动）</li>
+<li><code>$ git merge &lt;branch&gt;</code>（合并其他分支到当前分支）</li>
+<li><code>$ git diff &lt;source_branch&gt;&lt;target_branch&gt;</code>（合并时会有冲突conflicts，需要手动修改，用此命令查看不同）</li>
+<li><code>$ git mergetool</code>（使用工具修改冲突的文件，推荐<a href="http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools" target="_blank" rel="external">P4merge</a>）</li>
+</ul>
+<h4 id="查看_log">查看 log</h4><ul>
+<li><code>$ git log -n 1</code> （查看最后一次提交）</li>
+<li><code>$ git log -n 1 --stat</code> （查看最近一次提交所有更改过的文件）</li>
+<li><code>$ git log -n 1 -p</code> （最近一次提交所有更改的细节）</li>
+<li><code>$ git log -p &lt;filename&gt;</code> （某个文件的提交记录）</li>
+<li><code>$ git shortlog [-n] [-s] [-e] [-w] [rev-opts] [--] [... ]</code></li>
+</ul>
+<h4 id="标签">标签</h4><ul>
+<li><code>$ git tag</code> （列出现有标签）</li>
+<li><code>$ git tag -a -m &lt;message&gt;</code> （带有信息的标签）</li>
+<li><code>$ git tag</code> （为某个 commit 打上标签）</li>
+<li><code>$ git push --tags</code> （默认的 push 操作不会上传 tag）</li>
+<li><code>$ git push -d origin</code> （删除某个 tag）</li>
+</ul>
+<h4 id="衍合(rebase)">衍合(rebase)</h4><blockquote>
+<p>把在一个分支里提交的改变移到另一个分支里重放一遍.<a href="http://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E8%A1%8D%E5%90%88" target="_blank" rel="external">参考</a></p>
+</blockquote>
+<ul>
+<li><code>$ git rebase &lt;branch_to_be_rebased&gt;</code></li>
+<li><code>$ git rebase --continue</code>（有时会有冲突，用 mergetool<br>解决后用此命令完成 rebase）</li>
+</ul>
+<h4 id="Submodule">Submodule</h4><blockquote>
+<p>Submodule 的文件只存储在本地，主仓库只存储它的 URL 和它的某个 commit SHA1 值。<br>将某个仓库设为 submodule</p>
+</blockquote>
+<ol>
+<li><code>$ git submodule add git://github.com/my/submodule.git ./submodule</code></li>
+<li><code>$  git submodule update --init</code>  取得新仓库的 submodule</li>
+<li><code>$ git submodule update --recursive --init</code> 取得子仓库的更新</li>
+<li><code>$ cd ./submodule</code></li>
+<li><code>$ git pull origin master</code></li>
+</ol>
+<h4 id="Github_fork_项目后更新">Github fork 项目后更新</h4><ol>
+<li><code>$ git remote add upstream https://原始项目地址</code></li>
+<li><code>$ git fetch upstream</code></li>
+<li><code>$ git checkout master</code></li>
+<li><code>$ git merge upstream/master</code></li>
+<li><code>$ git push</code></li>
+</ol>
+<h4 id="修改远程仓库地址">修改远程仓库地址</h4><ol>
+<li>先查看改名前的URL下的版本名：<code>$ git remote -v</code></li>
+<li>然后设置新的URL：<code>$ git remote set -url 版本名 新的URL</code></li>
+<li>或者删掉原来的版本，再add进新的URL：<ol>
+<li><code>$ git remote rm 版本名</code></li>
+<li><code>$ git remote add 版本名 新的URL</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="Git回滾">Git回滾</h4><ol>
+<li><code>$ git reset --hard &lt;commit_id&gt;</code></li>
+<li><code>$ git push origin HEAD --force</code></li>
+<li>根据 –soft –mixed –hard，会对working tree和index和HEAD进行重置:<ul>
+<li><code>git reset –mixed</code>：此为默认方式，不带任何参数的git reset，回退到某个版本，只保留源码，回退commit和index信息</li>
+<li><code>git reset –soft</code>：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可</li>
+<li><code>git reset –hard</code>：彻底回退到某个版本，本地的源码也会变为上一个版本的内容<blockquote>
+<p>HEAD 最近一个提交<br>HEAD^ 上一个提交<br><commit_id> 每次commit的SHA1值. 可以用<code>git log</code>看到,也可以在commit标签页里找到.</commit_id></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Changing_the_Last_Commit_Message">Changing the Last Commit Message</h4><ul>
+<li><code>$ git commit --amend</code></li>
+</ul>
+<h4 id="Cleaning_up_local_repository">Cleaning up local repository</h4><ul>
+<li><code>$ git gc --prune=now</code></li>
+<li><code>$ git remote prune origin</code></li>
+</ul>
+<h4 id="Specifying_Dates">Specifying Dates</h4><ul>
+<li><code>$ GIT_AUTHOR_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;
+GIT_COMMITTER_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot; git commit -v</code></li>
+<li><code>$ GIT_AUTHOR_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;
+GIT_COMMITTER_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot; git commit --amend
+--date=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;</code></li>
+</ul>
+<h4 id="Change_the_author_of_a_commit">Change the author of a commit</h4><ol>
+<li><code>$ git rebase -i -p &lt;some HEAD before all of your bad commits&gt;</code></li>
+<li>标记需要更改的 commit 为 <code>edit</code></li>
+<li><code>$ git commit --amend --author=&quot;New Author Name &lt;email@address.com&gt;&quot;</code><ol>
+<li>如果只需要改上一个 commit，执行这一步就可以了，不需要 rebase</li>
+<li>如果要同时改变 author 和 committer：<br><code>$ git -c user.name=&quot;New Author Name&quot; -c
+user.email=email@address.com commit --amend --reset-author</code></li>
+</ol>
+</li>
+<li><code>$ git rebase --continue</code></li>
+</ol>
+<h4 id="其他:">其他:</h4><ul>
+<li><p>类似错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! bacca66..6b9508a custom/100acc -&#62; origin/custom/100acc (unable to&#10;update local ref)&#10;error: Ref refs/remotes/origin/custom/985 is at&#10;a2a6e32bfcef6e429c5e42fc7973f1d6e57eaae8 but expected&#10;d3c05036b295f6539870683e4c794cd9c3ae1579</span><br></pre></td></tr></table></figure>
+<ol>
+<li><code>$ rm .git/refs/remotes/origin/custom/100acc</code></li>
+<li><code>$ git fetch --prune origin</code></li>
+</ol>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h4 id="基本步骤">基本步骤</h4><ul>
+<li><code>$ git init</code> （初始化，创建新的git仓库）</li>
+<li><code>$ git add &lt;filename&gt;</code> （将改动添加到缓存区Index）</li>
+<li><code>$ git add -u</code>（automatically stage tracked files including deleting the previously tracked files）</li>
+<li><code>$ git commit -m</code> “改动信息”（实际提交改动到HEAD）</li>
+<li><code>$ git commit -v</code> (可在输入 log 时在下方显示改动内容)</li>
+<li><code>$ git push origin</code> &lt;某个分支&gt;（将本地仓库的改动origin提交到某个分支）</li>
+<li><code>$ git remote add origin &lt;server&gt;</code> （如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）]]>
+    
+    </summary>
+    
+      <category term="Git" scheme="http://rensisi.com/tags/Git/"/>
+    
+      <category term="Git" scheme="http://rensisi.com/categories/Git/"/>
+    
+  </entry>
+  
+</feed>
