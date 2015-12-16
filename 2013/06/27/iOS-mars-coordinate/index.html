@@ -10,9 +10,7 @@
 国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。
 
 
-百度坐标 (BD-09)
-百度标准，在 GCJ-02 基础上，进行了 BD-09 二次加密
-需要通过坐标转"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/zhugexiaobo" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/zhugexiaobo" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">iOS 火星坐标问题</h1><div class="post-meta"><div class="post-time">Jun 27, 2013</div></div><div class="post-content"><h4 id="3种坐标">3种坐标</h4><ul>
+&lt;a href=&quot;http://developer.baidu.com/map/question.htm#qa004&quot; target=&quot;_blank&quot; rel=&quot;ex"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/zhugexiaobo" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/zhugexiaobo" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">iOS 火星坐标问题</h1><div class="post-meta"><div class="post-time">Jun 27, 2013</div></div><div class="post-content"><h4 id="3_u79CD_u5750_u6807"><a href="#3_u79CD_u5750_u6807" class="headerlink" title="3种坐标"></a>3种坐标</h4><ul>
 <li><a href="http://zh.wikipedia.org/wiki/WGS84" target="_blank" rel="external">地球坐标（WGS84）</a><ul>
 <li>国际标准，GPS 标准从 GPS 设备中取出的原始数据是就是这个</li>
 <li>国际地图提供商一般使用的也是这个</li>
@@ -31,7 +29,7 @@
 </li>
 </ul>
 <a id="more"></a>
-<h4 id="iOS_现状">iOS 现状</h4><ul>
+<h4 id="iOS__u73B0_u72B6"><a href="#iOS__u73B0_u72B6" class="headerlink" title="iOS 现状"></a>iOS 现状</h4><ul>
 <li>获取经纬度（GPS）<ul>
 <li>火星坐标 <code>MKMapView</code></li>
 <li>地球坐标 <code>CLLocationManager</code></li>
@@ -55,7 +53,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="解决方案">解决方案</h4><ul>
+<h4 id="u89E3_u51B3_u65B9_u6848"><a href="#u89E3_u51B3_u65B9_u6848" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
 <li>国内存储用火星坐标，百度地图可以转换为火星坐标</li>
 <li><code>CLLocationManager</code> 获取的坐标转换为火星坐标，算法 <a href="https://gist.github.com/zvving/5476132" target="_blank" rel="external">CLLocation+Sino</a></li>
 <li>几个互相转换算法<ul>
@@ -73,7 +71,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="Links">Links</h4><ul>
+<h4 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h4><ul>
 <li><a href="http://yach.me/blog/2011/11/09/huo-xing-zuo-biao-xi-wen-ti-zai-iosxia-de-xiu/" target="_blank" rel="external">火星坐标系问题在iOS下的修正</a></li>
 <li><a href="http://blog.woodbunny.com/post-67.html" target="_blank" rel="external">借助百度地图转换火星坐标的研究</a></li>
 </ul>

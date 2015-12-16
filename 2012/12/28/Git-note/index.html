@@ -5,11 +5,7 @@ $ git add -u（automatically stage tracked files including deleting the previous
 $ git commit -m “改动信息”（实际提交改动到HEAD）
 $ git commit -v (可在输入 log 时在下方显示改动内容)
 $ git push origin &amp;lt;某个分支&amp;gt;（将本地仓库的改动origin提交到某个分支）
-$ git remote add origin &amp;lt;server&amp;gt; （如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）
-
-
-分支
-&lt;li"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/zhugexiaobo" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/zhugexiaobo" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Git 笔记</h1><div class="post-meta"><div class="post-time">Dec 28, 2012</div></div><div class="post-content"><h4 id="基本步骤">基本步骤</h4><ul>
+$ git remote add origin &amp;lt;server&amp;gt;"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="stylesheet" href="http://fonts.useso.com/css?family=Source+Sans+Pro:400,600" type="text/css"></head><body><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">博客</a></li><li class="nav-list-item"><a href="http://weibo.com/zhugexiaobo" target="_blank" class="nav-list-link">微博</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li><li class="nav-list-item"><a href="https://github.com/zhugexiaobo" target="_blank" class="nav-list-link">GITHUB</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">Git 笔记</h1><div class="post-meta"><div class="post-time">Dec 28, 2012</div></div><div class="post-content"><h4 id="u57FA_u672C_u6B65_u9AA4"><a href="#u57FA_u672C_u6B65_u9AA4" class="headerlink" title="基本步骤"></a>基本步骤</h4><ul>
 <li><code>$ git init</code> （初始化，创建新的git仓库）</li>
 <li><code>$ git add &lt;filename&gt;</code> （将改动添加到缓存区Index）</li>
 <li><code>$ git add -u</code>（automatically stage tracked files including deleting the previously tracked files）</li>
@@ -19,39 +15,39 @@ $ git remote add origin &amp;lt;server&amp;gt; （如果还未克隆现有仓库
 <li><code>$ git remote add origin &lt;server&gt;</code> （如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）<a id="more"></a>
 </li>
 </ul>
-<h4 id="分支">分支</h4><ul>
+<h4 id="u5206_u652F"><a href="#u5206_u652F" class="headerlink" title="分支"></a>分支</h4><ul>
 <li><code>$ git checkout -b</code> &lt;分支名&gt;（创建分支并切换过去）</li>
 <li><code>$ git checkout master</code>（切换回master分支）</li>
 <li><code>$ git branch -d</code> &lt;分支名&gt;（删除某分支）</li>
 </ul>
-<h4 id="更新与合并">更新与合并</h4><ul>
+<h4 id="u66F4_u65B0_u4E0E_u5408_u5E76"><a href="#u66F4_u65B0_u4E0E_u5408_u5E76" class="headerlink" title="更新与合并"></a>更新与合并</h4><ul>
 <li><code>$ git pull</code>（更新本地仓库至最新改动）</li>
 <li><code>$ git merge &lt;branch&gt;</code>（合并其他分支到当前分支）</li>
 <li><code>$ git diff &lt;source_branch&gt;&lt;target_branch&gt;</code>（合并时会有冲突conflicts，需要手动修改，用此命令查看不同）</li>
 <li><code>$ git mergetool</code>（使用工具修改冲突的文件，推荐<a href="http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools" target="_blank" rel="external">P4merge</a>）</li>
 </ul>
-<h4 id="查看_log">查看 log</h4><ul>
+<h4 id="u67E5_u770B_log"><a href="#u67E5_u770B_log" class="headerlink" title="查看 log"></a>查看 log</h4><ul>
 <li><code>$ git log -n 1</code> （查看最后一次提交）</li>
 <li><code>$ git log -n 1 --stat</code> （查看最近一次提交所有更改过的文件）</li>
 <li><code>$ git log -n 1 -p</code> （最近一次提交所有更改的细节）</li>
 <li><code>$ git log -p &lt;filename&gt;</code> （某个文件的提交记录）</li>
 <li><code>$ git shortlog [-n] [-s] [-e] [-w] [rev-opts] [--] [... ]</code></li>
 </ul>
-<h4 id="标签">标签</h4><ul>
+<h4 id="u6807_u7B7E"><a href="#u6807_u7B7E" class="headerlink" title="标签"></a>标签</h4><ul>
 <li><code>$ git tag</code> （列出现有标签）</li>
 <li><code>$ git tag -a -m &lt;message&gt;</code> （带有信息的标签）</li>
 <li><code>$ git tag</code> （为某个 commit 打上标签）</li>
 <li><code>$ git push --tags</code> （默认的 push 操作不会上传 tag）</li>
 <li><code>$ git push -d origin</code> （删除某个 tag）</li>
 </ul>
-<h4 id="衍合(rebase)">衍合(rebase)</h4><blockquote>
+<h4 id="u884D_u5408_28rebase_29"><a href="#u884D_u5408_28rebase_29" class="headerlink" title="衍合(rebase)"></a>衍合(rebase)</h4><blockquote>
 <p>把在一个分支里提交的改变移到另一个分支里重放一遍.<a href="http://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E8%A1%8D%E5%90%88" target="_blank" rel="external">参考</a></p>
 </blockquote>
 <ul>
 <li><code>$ git rebase &lt;branch_to_be_rebased&gt;</code></li>
 <li><code>$ git rebase --continue</code>（有时会有冲突，用 mergetool<br>解决后用此命令完成 rebase）</li>
 </ul>
-<h4 id="Submodule">Submodule</h4><blockquote>
+<h4 id="Submodule"><a href="#Submodule" class="headerlink" title="Submodule"></a>Submodule</h4><blockquote>
 <p>Submodule 的文件只存储在本地，主仓库只存储它的 URL 和它的某个 commit SHA1 值。<br>将某个仓库设为 submodule</p>
 </blockquote>
 <ol>
@@ -61,14 +57,14 @@ $ git remote add origin &amp;lt;server&amp;gt; （如果还未克隆现有仓库
 <li><code>$ cd ./submodule</code></li>
 <li><code>$ git pull origin master</code></li>
 </ol>
-<h4 id="Github_fork_项目后更新">Github fork 项目后更新</h4><ol>
+<h4 id="Github_fork__u9879_u76EE_u540E_u66F4_u65B0"><a href="#Github_fork__u9879_u76EE_u540E_u66F4_u65B0" class="headerlink" title="Github fork 项目后更新"></a>Github fork 项目后更新</h4><ol>
 <li><code>$ git remote add upstream https://原始项目地址</code></li>
 <li><code>$ git fetch upstream</code></li>
 <li><code>$ git checkout master</code></li>
 <li><code>$ git merge upstream/master</code></li>
 <li><code>$ git push</code></li>
 </ol>
-<h4 id="修改远程仓库地址">修改远程仓库地址</h4><ol>
+<h4 id="u4FEE_u6539_u8FDC_u7A0B_u4ED3_u5E93_u5730_u5740"><a href="#u4FEE_u6539_u8FDC_u7A0B_u4ED3_u5E93_u5730_u5740" class="headerlink" title="修改远程仓库地址"></a>修改远程仓库地址</h4><ol>
 <li>先查看改名前的URL下的版本名：<code>$ git remote -v</code></li>
 <li>然后设置新的URL：<code>$ git remote set -url 版本名 新的URL</code></li>
 <li>或者删掉原来的版本，再add进新的URL：<ol>
@@ -77,7 +73,7 @@ $ git remote add origin &amp;lt;server&amp;gt; （如果还未克隆现有仓库
 </ol>
 </li>
 </ol>
-<h4 id="Git回滾">Git回滾</h4><ol>
+<h4 id="Git_u56DE_u6EFE"><a href="#Git_u56DE_u6EFE" class="headerlink" title="Git回滾"></a>Git回滾</h4><ol>
 <li><code>$ git reset --hard &lt;commit_id&gt;</code></li>
 <li><code>$ git push origin HEAD --force</code></li>
 <li>根据 –soft –mixed –hard，会对working tree和index和HEAD进行重置:<ul>
@@ -90,21 +86,21 @@ $ git remote add origin &amp;lt;server&amp;gt; （如果还未克隆现有仓库
 </ul>
 </li>
 </ol>
-<h4 id="Changing_the_Last_Commit_Message">Changing the Last Commit Message</h4><ul>
+<h4 id="Changing_the_Last_Commit_Message"><a href="#Changing_the_Last_Commit_Message" class="headerlink" title="Changing the Last Commit Message"></a>Changing the Last Commit Message</h4><ul>
 <li><code>$ git commit --amend</code></li>
 </ul>
-<h4 id="Cleaning_up_local_repository">Cleaning up local repository</h4><ul>
+<h4 id="Cleaning_up_local_repository"><a href="#Cleaning_up_local_repository" class="headerlink" title="Cleaning up local repository"></a>Cleaning up local repository</h4><ul>
 <li><code>$ git gc --prune=now</code></li>
 <li><code>$ git remote prune origin</code></li>
 </ul>
-<h4 id="Specifying_Dates">Specifying Dates</h4><ul>
+<h4 id="Specifying_Dates"><a href="#Specifying_Dates" class="headerlink" title="Specifying Dates"></a>Specifying Dates</h4><ul>
 <li><code>$ GIT_AUTHOR_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;
 GIT_COMMITTER_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot; git commit -v</code></li>
 <li><code>$ GIT_AUTHOR_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;
 GIT_COMMITTER_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot; git commit --amend
 --date=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;</code></li>
 </ul>
-<h4 id="Change_the_author_of_a_commit">Change the author of a commit</h4><ol>
+<h4 id="Change_the_author_of_a_commit"><a href="#Change_the_author_of_a_commit" class="headerlink" title="Change the author of a commit"></a>Change the author of a commit</h4><ol>
 <li><code>$ git rebase -i -p &lt;some HEAD before all of your bad commits&gt;</code></li>
 <li>标记需要更改的 commit 为 <code>edit</code></li>
 <li><code>$ git commit --amend --author=&quot;New Author Name &lt;email@address.com&gt;&quot;</code><ol>
@@ -115,7 +111,7 @@ user.email=email@address.com commit --amend --reset-author</code></li>
 </li>
 <li><code>$ git rebase --continue</code></li>
 </ol>
-<h4 id="创建新的空分支">创建新的空分支</h4><ol>
+<h4 id="u521B_u5EFA_u65B0_u7684_u7A7A_u5206_u652F"><a href="#u521B_u5EFA_u65B0_u7684_u7A7A_u5206_u652F" class="headerlink" title="创建新的空分支"></a>创建新的空分支</h4><ol>
 <li>$ git symbolic-ref HEAD refs/heads/<newbranch></newbranch></li>
 <li>$ rm .git/index</li>
 <li>$ git clean -fdx</li>
@@ -123,7 +119,7 @@ user.email=email@address.com commit --amend --reset-author</code></li>
 <li>$ git add .</li>
 <li>$ git commit -v</li>
 </ol>
-<h4 id="其他:">其他:</h4><ul>
+<h4 id="u5176_u4ED6_3A"><a href="#u5176_u4ED6_3A" class="headerlink" title="其他:"></a>其他:</h4><ul>
 <li>分支名大小写问题：</li>
 </ul>
 <blockquote>
