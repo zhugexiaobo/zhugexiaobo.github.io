@@ -1,421 +1,442 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[BOOOO]]></title>
+  <title>BOOOO</title>
   
   <link href="/atom.xml" rel="self"/>
+  
   <link href="http://rensisi.com/"/>
   <updated>2015-11-25T06:58:51.000Z</updated>
   <id>http://rensisi.com/</id>
   
   <author>
-    <name><![CDATA[xiaobo]]></name>
+    <name>xiaobo</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hello Hexo]]></title>
+    <title>Hello Hexo</title>
     <link href="http://rensisi.com/2015/03/10/hello-hexo/"/>
     <id>http://rensisi.com/2015/03/10/hello-hexo/</id>
     <published>2015-03-09T16:00:00.000Z</published>
     <updated>2015-11-25T06:58:51.000Z</updated>
-    <content type="html"><![CDATA[<p>耳闻 <a href="https://github.com/hexojs/hexo" target="_blank" rel="external">Hexo</a> 已久，正好前几天看到<a href="http://hexo.io/news/2015/03/05/hexo-3-0-released/" target="_blank" rel="external">3.0发布</a>，似乎很好玩的样子，好久没折腾，那就搞起吧~<br><a id="more"></a><br>陆续要把一些笔记转到这里来，又有一会折腾了，想想都有点小激动呢~<br>再去搞个域名，一切就完美了 ：]</p>
-]]></content>
+    
+    <content type="html">&lt;p&gt;耳闻 &lt;a href=&quot;https://github.com/hexojs/hexo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt; 已久，正好前几天看到&lt;a href=&quot;http://hexo.io/news/2015/03/05/hexo-3-0-released/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;3.0发布&lt;/a&gt;，似乎很好玩的样子，好久没折腾，那就搞起吧~&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;br&gt;陆续要把一些笔记转到这里来，又有一会折腾了，想想都有点小激动呢~&lt;br&gt;再去搞个域名，一切就完美了 ：]&lt;/p&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[<p>耳闻 <a href="https://github.com/hexojs/hexo">Hexo</a> 已久，正好前几天看到<a href="http://hexo.io/news/2015/03/05/hexo-3-0-released/">3.0发布</a>，似乎很好玩的样子，好久没折腾，那就搞起吧~<br>]]>
+    
+      &lt;p&gt;耳闻 &lt;a href=&quot;https://github.com/hexojs/hexo&quot;&gt;Hexo&lt;/a&gt; 已久，正好前几天看到&lt;a href=&quot;http://hexo.io/news/2015/03/05/hexo-3-0-released/&quot;&gt;3.0发布&lt;/a&gt;，似乎很好玩的样子，好久没折腾，那就搞起吧~&lt;br&gt;
     
     </summary>
+    
     
   </entry>
   
   <entry>
-    <title><![CDATA[代码行数统计]]></title>
+    <title>代码行数统计</title>
     <link href="http://rensisi.com/2014/08/11/code-line-counting/"/>
     <id>http://rensisi.com/2014/08/11/code-line-counting/</id>
     <published>2014-08-10T16:00:00.000Z</published>
     <updated>2015-11-25T06:56:38.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="Terminal_shell__u547D_u4EE4"><a href="#Terminal_shell__u547D_u4EE4" class="headerlink" title="Terminal shell 命令"></a>Terminal shell 命令</h3><ul>
-<li>统计当前目录下 <code>.m</code> 文件的代码行数</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">"*.m"</span> | xargs wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<ul>
-<li>在当前目录统计 <code>.h</code>、<code>.m</code>、<code>.xib</code>、<code>.c</code> 文件中的代码行数</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">"*.m"</span> -o -name <span class="string">"*.h"</span> -o -name <span class="string">"*.xib"</span> -o -name <span class="string">"*.c"</span> | xargs wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>排除某个目录下的文件</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -path <span class="string">'./*/Vendors'</span> -prune -o -name <span class="string">"*.m"</span> -o -name <span class="string">"*.h"</span> -o -name <span class="string">"*.xib"</span> -o -name <span class="string">"*.c"</span> | xargs wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>排除多个目录，注意空格</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . \( -path <span class="string">'./*/Vendors'</span> -o -path <span class="string">'./*/Crashlytics.framework'</span> \) -prune -o -name <span class="string">"*.m"</span> -o -name <span class="string">"*.h"</span> -o -name <span class="string">"*.xib"</span> -o -name <span class="string">"*.c"</span> | xargs wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>排除空行</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . \( -path <span class="string">'./*/Vendors'</span> -o -path <span class="string">'./*/Crashlytics.framework'</span> \) -prune -o -name <span class="string">"*.m"</span> -o -name <span class="string">"*.h"</span> -o -name <span class="string">"*.xib"</span> -o -name <span class="string">"*.c"</span> | xargs grep -v <span class="string">"^$"</span> | wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>排除 <code>/</code> 开头的注释</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . \( -path <span class="string">'./*/Vendors'</span> -o -path <span class="string">'./*/Crashlytics.framework'</span> \) -prune -o -name <span class="string">"*.m"</span> -o -name <span class="string">"*.h"</span> -o -name <span class="string">"*.xib"</span> -o -name <span class="string">"*.c"</span> | xargs grep -v <span class="operator">-e</span> <span class="string">"^$"</span> <span class="operator">-e</span> <span class="string">"^\s*\/.*$"</span> | wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>
-<h3 id="Sublime_Text__u6B63_u5219_u641C_u7D22"><a href="#Sublime_Text__u6B63_u5219_u641C_u7D22" class="headerlink" title="Sublime Text 正则搜索"></a>Sublime Text 正则搜索</h3><ul>
-<li>统计打开的目录下所有代码行数</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find: ^.*$</span><br></pre></td></tr></table></figure>
-<ul>
-<li>统计打开的目录下所有代码行数并去除空行</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find: ^[ \t]*[^ \t\n\r]+.*$</span><br></pre></td></tr></table></figure>
-<ul>
-<li>统计打开的目录下所有代码行数并排除空行和注释行(包括<code>/</code> 和 <code>#</code>，<code>?</code> 不是必需的)</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find: ^[ \t]*?[^ \t\n\r/<span class="comment">#]+?.*$</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>统计特定文件并排除特定文件夹</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Find: ^[ \t]*?[^ \t\n\r/<span class="comment">#]+?.*$</span></span><br><span class="line">Where: *.h, *.m, *.xib, -*/Vendors/*</span><br></pre></td></tr></table></figure>
-<hr>
-<p>参考：</p>
-<ul>
-<li><a href="http://hittyt.iteye.com/blog/1700584" target="_blank" rel="external">一句shell命令搞定代码行数统计</a></li>
-<li><a href="http://zhouhua.github.io/2013/06/20/skills/" target="_blank" rel="external">统计代码行数的小技巧 </a></li>
-</ul>
-]]></content>
+    
+    <content type="html">&lt;h3 id=&quot;Terminal-shell-命令&quot;&gt;&lt;a href=&quot;#Terminal-shell-命令&quot; class=&quot;headerlink&quot; title=&quot;Terminal shell 命令&quot;&gt;&lt;/a&gt;Terminal shell 命令&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;统计当前目录下 &lt;code&gt;.m&lt;/code&gt; 文件的代码行数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;find . -name &lt;span class=&quot;string&quot;&gt;&quot;*.m&quot;&lt;/span&gt; | xargs wc &lt;span class=&quot;operator&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;在当前目录统计 &lt;code&gt;.h&lt;/code&gt;、&lt;code&gt;.m&lt;/code&gt;、&lt;code&gt;.xib&lt;/code&gt;、&lt;code&gt;.c&lt;/code&gt; 文件中的代码行数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;find . -name &lt;span class=&quot;string&quot;&gt;&quot;*.m&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.h&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.xib&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.c&quot;&lt;/span&gt; | xargs wc &lt;span class=&quot;operator&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;排除某个目录下的文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;find . -path &lt;span class=&quot;string&quot;&gt;&#39;./*/Vendors&#39;&lt;/span&gt; -prune -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.m&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.h&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.xib&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.c&quot;&lt;/span&gt; | xargs wc &lt;span class=&quot;operator&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;排除多个目录，注意空格&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;find . \( -path &lt;span class=&quot;string&quot;&gt;&#39;./*/Vendors&#39;&lt;/span&gt; -o -path &lt;span class=&quot;string&quot;&gt;&#39;./*/Crashlytics.framework&#39;&lt;/span&gt; \) -prune -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.m&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.h&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.xib&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.c&quot;&lt;/span&gt; | xargs wc &lt;span class=&quot;operator&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;排除空行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;find . \( -path &lt;span class=&quot;string&quot;&gt;&#39;./*/Vendors&#39;&lt;/span&gt; -o -path &lt;span class=&quot;string&quot;&gt;&#39;./*/Crashlytics.framework&#39;&lt;/span&gt; \) -prune -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.m&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.h&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.xib&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.c&quot;&lt;/span&gt; | xargs grep -v &lt;span class=&quot;string&quot;&gt;&quot;^$&quot;&lt;/span&gt; | wc &lt;span class=&quot;operator&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;排除 &lt;code&gt;/&lt;/code&gt; 开头的注释&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;find . \( -path &lt;span class=&quot;string&quot;&gt;&#39;./*/Vendors&#39;&lt;/span&gt; -o -path &lt;span class=&quot;string&quot;&gt;&#39;./*/Crashlytics.framework&#39;&lt;/span&gt; \) -prune -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.m&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.h&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.xib&quot;&lt;/span&gt; -o -name &lt;span class=&quot;string&quot;&gt;&quot;*.c&quot;&lt;/span&gt; | xargs grep -v &lt;span class=&quot;operator&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;^$&quot;&lt;/span&gt; &lt;span class=&quot;operator&quot;&gt;-e&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&quot;^\s*\/.*$&quot;&lt;/span&gt; | wc &lt;span class=&quot;operator&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;Sublime-Text-正则搜索&quot;&gt;&lt;a href=&quot;#Sublime-Text-正则搜索&quot; class=&quot;headerlink&quot; title=&quot;Sublime Text 正则搜索&quot;&gt;&lt;/a&gt;Sublime Text 正则搜索&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;统计打开的目录下所有代码行数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Find: ^.*$&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;统计打开的目录下所有代码行数并去除空行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Find: ^[ \t]*[^ \t\n\r]+.*$&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;统计打开的目录下所有代码行数并排除空行和注释行(包括&lt;code&gt;/&lt;/code&gt; 和 &lt;code&gt;#&lt;/code&gt;，&lt;code&gt;?&lt;/code&gt; 不是必需的)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Find: ^[ \t]*?[^ \t\n\r/&lt;span class=&quot;comment&quot;&gt;#]+?.*$&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;统计特定文件并排除特定文件夹&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Find: ^[ \t]*?[^ \t\n\r/&lt;span class=&quot;comment&quot;&gt;#]+?.*$&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Where: *.h, *.m, *.xib, -*/Vendors/*&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;参考：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://hittyt.iteye.com/blog/1700584&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一句shell命令搞定代码行数统计&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://zhouhua.github.io/2013/06/20/skills/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;统计代码行数的小技巧 &lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[<h3 id="Terminal_shell__u547D_u4EE4"><a href="#Terminal_shell__u547D_u4EE4" class="headerlink" title="Terminal shell 命令"></a>Terminal shell 命令</h3><ul>
-<li>统计当前目录下 <code>.m</code> 文件的代码行数</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">"*.m"</span> | xargs wc <span class="operator">-l</span></span><br></pre></td></tr></table></figure>]]>
+    
+      &lt;h3 id=&quot;Terminal-shell-命令&quot;&gt;&lt;a href=&quot;#Terminal-shell-命令&quot; class=&quot;headerlink&quot; title=&quot;Terminal shell 命令&quot;&gt;&lt;/a&gt;Terminal shell 命令&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;统计当前目录下 &lt;code&gt;.m&lt;/code&gt; 文件的代码行数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;find . -name &lt;span class=&quot;string&quot;&gt;&quot;*.m&quot;&lt;/span&gt; | xargs wc &lt;span class=&quot;operator&quot;&gt;-l&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
+    
     
   </entry>
   
   <entry>
-    <title><![CDATA[2013年个人总结]]></title>
+    <title>2013年个人总结</title>
     <link href="http://rensisi.com/2014/01/04/2013-summary/"/>
     <id>http://rensisi.com/2014/01/04/2013-summary/</id>
     <published>2014-01-03T16:00:00.000Z</published>
     <updated>2015-11-25T12:49:02.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="u503C_u5F97_u4E00_u8BB0"><a href="#u503C_u5F97_u4E00_u8BB0" class="headerlink" title="值得一记"></a>值得一记</h2><ul>
-<li>上架2个 iOS 应用</li>
-<li>Scrum master 半年</li>
-<li>分享『<a href="https://docs.google.com/presentation/d/1BW6QPPlI38_3aj7ybE6BcNQRAA7wnXeH0lRlbgyszI4/edit?usp=sharing" target="_blank" rel="external">iOS 设计模式简介</a>』讲座</li>
-<li>参加「<a href="http://segmentfault.com/e/geekon-2013" target="_blank" rel="external">极客行动</a>」并完成一个公益项目</li>
-<li>在 Evernote 中记录了220篇技术笔记</li>
-<li>熟练 Git 及其理念</li>
-<li>Vim 入门<a id="more"></a>
-</li>
-</ul>
-<h3 id="u8DA3_u70B9-_u9605_u8BFB_u7EBF_u7D22"><a href="#u8DA3_u70B9-_u9605_u8BFB_u7EBF_u7D22" class="headerlink" title="趣点-阅读线索"></a><a href="https://itunes.apple.com/cn/app/qu-dian-yue-du-xian-suo/id696517754?mt=8" target="_blank" rel="external">趣点-阅读线索</a></h3><p>加入趣点后的第一个也是最主要的项目，前前后后折腾了4个多月的时间才正式上架。过程中学到了很多实用的东西，也踩了不少的坑，并逐渐开始探索底层的东西。</p>
-<ul>
-<li>初期技术预研和框架搭建花了不少时间，主要是经验不足</li>
-<li>期间有一次设计和交互上的大变动，因为当时的设计是外包的</li>
-<li>自定义了一些控件，如横向滚动的列表，可左右拖动的 cell，可点击的 label等</li>
-<li>在 Webview 中加载了 JS 插件</li>
-<li>几次代码重构，分离耦合度高的模块，创建一些接口类</li>
-<li>4吋屏适配，iPad 和 iOS7 兼容</li>
-</ul>
-<h3 id="Iamhere-_u81EA_u52A9_u7B7E_u5230_u5E94_u7528"><a href="#Iamhere-_u81EA_u52A9_u7B7E_u5230_u5E94_u7528" class="headerlink" title="Iamhere-自助签到应用"></a><a href="https://itunes.apple.com/sa/app/iamhere-zi-zhu-qian-dao-ying/id696509312?mt=8" target="_blank" rel="external">Iamhere-自助签到应用</a></h3><p>Toy project，前端+后台+iOS+Android 3天时间完成第一版，后来花了将近一个月讨论/改进产品化。</p>
-<ul>
-<li>使用了当时较流行的 <a href="https://github.com/Grouper/FlatUIKit" target="_blank" rel="external">FlatUIKit</a> 写界面，很喜欢这种舒服的扁平风格，虽然代码稍显臃肿，但归置得当还是一目了然的，而且免去贴图，省事</li>
-<li>二维码扫描用的 <a href="http://sourceforge.net/projects/zbar/files/iPhoneSDK/beta/" target="_blank" rel="external">ZBarSDK</a>，可扫各种码，集成使用简单（ZBarReaderViewController），对扫描界面的定制支持也不错（ZBarReaderView）。不过似乎停止更新了，iOS7 也增加了二维码扫描功能。</li>
-<li>定位碰到了一个大坑——「<a href="/2013/06/27/iOS-mars-coordinate">火星座标</a>」，好在先烈们提供了方案</li>
-<li>显示倒计时这个模块写的不太好，计算剩余时间考虑不周全，造成几个 BUG</li>
-<li>本地通知这个功能蛮有意思</li>
-</ul>
-<h3 id="u8BF4_u8BF4_Scrum"><a href="#u8BF4_u8BF4_Scrum" class="headerlink" title="说说 Scrum"></a>说说 Scrum</h3><p>小团队最适合像 Scrum 这种敏捷开发的流程，这也是小团队的优势。不过方法是死的，关键还得看个人的执行和实施。得益最多的还是对任务的拆分，将大的任务细分为可控的小点，执行起来比较有效率。<a href="https://trello.com/" target="_blank" rel="external">Trello</a> 很好用。</p>
-<h3 id="u8BBE_u8BA1_u6A21_u5F0F_u548C_u8BB2_u5EA7"><a href="#u8BBE_u8BA1_u6A21_u5F0F_u548C_u8BB2_u5EA7" class="headerlink" title="设计模式和讲座"></a>设计模式和讲座</h3><p>在做趣点客户端的时候边学习边思考边写，积累了一些 iOS 中设计模式的使用，于是在 「<a href="http://blog.qudian.so/Talk/ios-design-patterns-intro/" target="_blank" rel="external">TechTalk</a>」 分2次分享了 『<a href="https://docs.google.com/presentation/d/1BW6QPPlI38_3aj7ybE6BcNQRAA7wnXeH0lRlbgyszI4/edit?usp=sharing" target="_blank" rel="external">iOS 设计模式简介</a>』，所谓能讲出来才算真正的理解嘛。<br>讲的挺烂的，到后面都变成了研讨会了，说明理解还是比较浅，不过对我来说还是挺有收获。</p>
-<h3 id="u6781_u5BA2_u884C_u52A8"><a href="#u6781_u5BA2_u884C_u52A8" class="headerlink" title="极客行动"></a>极客行动</h3><p>类似「黑客马拉松」的活动，时间是36小时，一个后台、一个设计和我，项目是公益与会人员签到和志愿者外勤追踪，准备做一个打卡+记录统计的 iOS 应用。最后虽然没有获奖，但36小时3个人合作让一个项目在手中成功诞生，还是挺有成就感的。</p>
-<h3 id="u7B14_u8BB0"><a href="#u7B14_u8BB0" class="headerlink" title="笔记"></a>笔记</h3><p>Evernote 真是一个强大的生产力工具，各平台的客户端不说，围绕它开发的一些插件就非常好用，浏览器上的「<a href="https://evernote.com/intl/zh-cn/webclipper/" target="_blank" rel="external">剪贴</a>」简直神器。还有就是越来越多的工具能同步到 Evernote，比如「<a href="http://maxiang.info/" target="_blank" rel="external">马克飞象</a>」就完美的结合了 Markdown 编辑器和 Evernote。用 Markdown 语法即时预览写完，同步过去就是一篇渲染完毕的笔记，弥补了 Evernote 格式上的缺憾。所以当解决一个难题、踩过一个坑、捣鼓了新东西…时我就会及时记录，慢慢就有了一些积累。准备等有空就发到博客上去晒晒。</p>
-<h3 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h3><p>刚开始用 Git 管理代码的时候只知道 add/commit/push，commit 的频率非常低，一看 log 就知道完全没有发挥出 Git 所应有的版本管理的作用。后来在各种大牛们的指点下，</p>
-<ul>
-<li>每个 commit 只做一件事</li>
-<li>commit message 规范明了</li>
-<li>branch 结构清晰</li>
-<li>打 tag</li>
-<li>merge 冲突代码</li>
-<li>.gitignore/.gitconfig 文件配置</li>
-<li><a href="http://jonas.nitro.dk/tig/" target="_blank" rel="external">tig</a> 非常好用 ：]</li>
-<li>等等</li>
-</ul>
-<p>感觉很好，也算是会用 Git 进行版本管理了吧。</p>
-<h3 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h3><p>之前在 Terminal 中编辑文档一直用的 nano，后来终于用上了「编辑器之神」Vim，学习曲线略高但是值得。</p>
-<ul>
-<li>安装了 <a href="https://code.google.com/p/macvim/" target="_blank" rel="external">MacVim</a> 并添加<code>alias vim=&quot;mvim -v&quot;</code>在终端中使用</li>
-<li><a href="https://github.com/carlhuda/janus" target="_blank" rel="external">janus</a> 正好为我等懒人准备了插件配置包，这也是仅次于 <a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">oh-my-zsh
-</a>的好东西 ：]</li>
-<li>目前还是非常初级的 Vimer</li>
-</ul>
-<h3 id="u5176_u4ED6"><a href="#u5176_u4ED6" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>关注了很多 iOS 的同行大牛们，他们很多都有自己的博客，让我收获颇多</li>
-<li>Github 上的开源项目让我知道优秀的代码该怎么写</li>
-<li>开发者们贡献了很多好用的控件，让我避免了重复「造轮子」</li>
-<li>这一年专心于 iOS 开发的积累，以现在的学习能力和技术经验，市面上的大部分 iOS 客户端应该都能独立实现</li>
-</ul>
-]]></content>
+    
+    <content type="html">&lt;h2 id=&quot;值得一记&quot;&gt;&lt;a href=&quot;#值得一记&quot; class=&quot;headerlink&quot; title=&quot;值得一记&quot;&gt;&lt;/a&gt;值得一记&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;上架2个 iOS 应用&lt;/li&gt;
+&lt;li&gt;Scrum master 半年&lt;/li&gt;
+&lt;li&gt;分享『&lt;a href=&quot;https://docs.google.com/presentation/d/1BW6QPPlI38_3aj7ybE6BcNQRAA7wnXeH0lRlbgyszI4/edit?usp=sharing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS 设计模式简介&lt;/a&gt;』讲座&lt;/li&gt;
+&lt;li&gt;参加「&lt;a href=&quot;http://segmentfault.com/e/geekon-2013&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;极客行动&lt;/a&gt;」并完成一个公益项目&lt;/li&gt;
+&lt;li&gt;在 Evernote 中记录了220篇技术笔记&lt;/li&gt;
+&lt;li&gt;熟练 Git 及其理念&lt;/li&gt;
+&lt;li&gt;Vim 入门&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;趣点-阅读线索&quot;&gt;&lt;a href=&quot;#趣点-阅读线索&quot; class=&quot;headerlink&quot; title=&quot;趣点-阅读线索&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://itunes.apple.com/cn/app/qu-dian-yue-du-xian-suo/id696517754?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;趣点-阅读线索&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;加入趣点后的第一个也是最主要的项目，前前后后折腾了4个多月的时间才正式上架。过程中学到了很多实用的东西，也踩了不少的坑，并逐渐开始探索底层的东西。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;初期技术预研和框架搭建花了不少时间，主要是经验不足&lt;/li&gt;
+&lt;li&gt;期间有一次设计和交互上的大变动，因为当时的设计是外包的&lt;/li&gt;
+&lt;li&gt;自定义了一些控件，如横向滚动的列表，可左右拖动的 cell，可点击的 label等&lt;/li&gt;
+&lt;li&gt;在 Webview 中加载了 JS 插件&lt;/li&gt;
+&lt;li&gt;几次代码重构，分离耦合度高的模块，创建一些接口类&lt;/li&gt;
+&lt;li&gt;4吋屏适配，iPad 和 iOS7 兼容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;Iamhere-自助签到应用&quot;&gt;&lt;a href=&quot;#Iamhere-自助签到应用&quot; class=&quot;headerlink&quot; title=&quot;Iamhere-自助签到应用&quot;&gt;&lt;/a&gt;&lt;a href=&quot;https://itunes.apple.com/sa/app/iamhere-zi-zhu-qian-dao-ying/id696509312?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Iamhere-自助签到应用&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;Toy project，前端+后台+iOS+Android 3天时间完成第一版，后来花了将近一个月讨论/改进产品化。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;使用了当时较流行的 &lt;a href=&quot;https://github.com/Grouper/FlatUIKit&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;FlatUIKit&lt;/a&gt; 写界面，很喜欢这种舒服的扁平风格，虽然代码稍显臃肿，但归置得当还是一目了然的，而且免去贴图，省事&lt;/li&gt;
+&lt;li&gt;二维码扫描用的 &lt;a href=&quot;http://sourceforge.net/projects/zbar/files/iPhoneSDK/beta/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ZBarSDK&lt;/a&gt;，可扫各种码，集成使用简单（ZBarReaderViewController），对扫描界面的定制支持也不错（ZBarReaderView）。不过似乎停止更新了，iOS7 也增加了二维码扫描功能。&lt;/li&gt;
+&lt;li&gt;定位碰到了一个大坑——「&lt;a href=&quot;/2013/06/27/iOS-mars-coordinate&quot;&gt;火星座标&lt;/a&gt;」，好在先烈们提供了方案&lt;/li&gt;
+&lt;li&gt;显示倒计时这个模块写的不太好，计算剩余时间考虑不周全，造成几个 BUG&lt;/li&gt;
+&lt;li&gt;本地通知这个功能蛮有意思&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;说说-Scrum&quot;&gt;&lt;a href=&quot;#说说-Scrum&quot; class=&quot;headerlink&quot; title=&quot;说说 Scrum&quot;&gt;&lt;/a&gt;说说 Scrum&lt;/h3&gt;&lt;p&gt;小团队最适合像 Scrum 这种敏捷开发的流程，这也是小团队的优势。不过方法是死的，关键还得看个人的执行和实施。得益最多的还是对任务的拆分，将大的任务细分为可控的小点，执行起来比较有效率。&lt;a href=&quot;https://trello.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Trello&lt;/a&gt; 很好用。&lt;/p&gt;
+&lt;h3 id=&quot;设计模式和讲座&quot;&gt;&lt;a href=&quot;#设计模式和讲座&quot; class=&quot;headerlink&quot; title=&quot;设计模式和讲座&quot;&gt;&lt;/a&gt;设计模式和讲座&lt;/h3&gt;&lt;p&gt;在做趣点客户端的时候边学习边思考边写，积累了一些 iOS 中设计模式的使用，于是在 「&lt;a href=&quot;http://blog.qudian.so/Talk/ios-design-patterns-intro/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;TechTalk&lt;/a&gt;」 分2次分享了 『&lt;a href=&quot;https://docs.google.com/presentation/d/1BW6QPPlI38_3aj7ybE6BcNQRAA7wnXeH0lRlbgyszI4/edit?usp=sharing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iOS 设计模式简介&lt;/a&gt;』，所谓能讲出来才算真正的理解嘛。&lt;br&gt;讲的挺烂的，到后面都变成了研讨会了，说明理解还是比较浅，不过对我来说还是挺有收获。&lt;/p&gt;
+&lt;h3 id=&quot;极客行动&quot;&gt;&lt;a href=&quot;#极客行动&quot; class=&quot;headerlink&quot; title=&quot;极客行动&quot;&gt;&lt;/a&gt;极客行动&lt;/h3&gt;&lt;p&gt;类似「黑客马拉松」的活动，时间是36小时，一个后台、一个设计和我，项目是公益与会人员签到和志愿者外勤追踪，准备做一个打卡+记录统计的 iOS 应用。最后虽然没有获奖，但36小时3个人合作让一个项目在手中成功诞生，还是挺有成就感的。&lt;/p&gt;
+&lt;h3 id=&quot;笔记&quot;&gt;&lt;a href=&quot;#笔记&quot; class=&quot;headerlink&quot; title=&quot;笔记&quot;&gt;&lt;/a&gt;笔记&lt;/h3&gt;&lt;p&gt;Evernote 真是一个强大的生产力工具，各平台的客户端不说，围绕它开发的一些插件就非常好用，浏览器上的「&lt;a href=&quot;https://evernote.com/intl/zh-cn/webclipper/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;剪贴&lt;/a&gt;」简直神器。还有就是越来越多的工具能同步到 Evernote，比如「&lt;a href=&quot;http://maxiang.info/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;马克飞象&lt;/a&gt;」就完美的结合了 Markdown 编辑器和 Evernote。用 Markdown 语法即时预览写完，同步过去就是一篇渲染完毕的笔记，弥补了 Evernote 格式上的缺憾。所以当解决一个难题、踩过一个坑、捣鼓了新东西…时我就会及时记录，慢慢就有了一些积累。准备等有空就发到博客上去晒晒。&lt;/p&gt;
+&lt;h3 id=&quot;Git&quot;&gt;&lt;a href=&quot;#Git&quot; class=&quot;headerlink&quot; title=&quot;Git&quot;&gt;&lt;/a&gt;Git&lt;/h3&gt;&lt;p&gt;刚开始用 Git 管理代码的时候只知道 add/commit/push，commit 的频率非常低，一看 log 就知道完全没有发挥出 Git 所应有的版本管理的作用。后来在各种大牛们的指点下，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每个 commit 只做一件事&lt;/li&gt;
+&lt;li&gt;commit message 规范明了&lt;/li&gt;
+&lt;li&gt;branch 结构清晰&lt;/li&gt;
+&lt;li&gt;打 tag&lt;/li&gt;
+&lt;li&gt;merge 冲突代码&lt;/li&gt;
+&lt;li&gt;.gitignore/.gitconfig 文件配置&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://jonas.nitro.dk/tig/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;tig&lt;/a&gt; 非常好用 ：]&lt;/li&gt;
+&lt;li&gt;等等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;感觉很好，也算是会用 Git 进行版本管理了吧。&lt;/p&gt;
+&lt;h3 id=&quot;Vim&quot;&gt;&lt;a href=&quot;#Vim&quot; class=&quot;headerlink&quot; title=&quot;Vim&quot;&gt;&lt;/a&gt;Vim&lt;/h3&gt;&lt;p&gt;之前在 Terminal 中编辑文档一直用的 nano，后来终于用上了「编辑器之神」Vim，学习曲线略高但是值得。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;安装了 &lt;a href=&quot;https://code.google.com/p/macvim/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MacVim&lt;/a&gt; 并添加&lt;code&gt;alias vim=&amp;quot;mvim -v&amp;quot;&lt;/code&gt;在终端中使用&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/carlhuda/janus&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;janus&lt;/a&gt; 正好为我等懒人准备了插件配置包，这也是仅次于 &lt;a href=&quot;https://github.com/robbyrussell/oh-my-zsh&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;oh-my-zsh
+&lt;/a&gt;的好东西 ：]&lt;/li&gt;
+&lt;li&gt;目前还是非常初级的 Vimer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他&quot;&gt;&lt;/a&gt;其他&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;关注了很多 iOS 的同行大牛们，他们很多都有自己的博客，让我收获颇多&lt;/li&gt;
+&lt;li&gt;Github 上的开源项目让我知道优秀的代码该怎么写&lt;/li&gt;
+&lt;li&gt;开发者们贡献了很多好用的控件，让我避免了重复「造轮子」&lt;/li&gt;
+&lt;li&gt;这一年专心于 iOS 开发的积累，以现在的学习能力和技术经验，市面上的大部分 iOS 客户端应该都能独立实现&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[<h2 id="u503C_u5F97_u4E00_u8BB0"><a href="#u503C_u5F97_u4E00_u8BB0" class="headerlink" title="值得一记"></a>值得一记</h2><ul>
-<li>上架2个 iOS 应用</li>
-<li>Scrum master 半年</li>
-<li>分享『<a href="https://docs.google.com/presentation/d/1BW6QPPlI38_3aj7ybE6BcNQRAA7wnXeH0lRlbgyszI4/edit?usp=sharing">iOS 设计模式简介</a>』讲座</li>
-<li>参加「<a href="http://segmentfault.com/e/geekon-2013">极客行动</a>」并完成一个公益项目</li>
-<li>在 Evernote 中记录了220篇技术笔记</li>
-<li>熟练 Git 及其理念</li>
-<li>Vim 入门]]>
+    
+      &lt;h2 id=&quot;值得一记&quot;&gt;&lt;a href=&quot;#值得一记&quot; class=&quot;headerlink&quot; title=&quot;值得一记&quot;&gt;&lt;/a&gt;值得一记&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;上架2个 iOS 应用&lt;/li&gt;
+&lt;li&gt;Scrum master 半年&lt;/li&gt;
+&lt;li&gt;分享『&lt;a href=&quot;https://docs.google.com/presentation/d/1BW6QPPlI38_3aj7ybE6BcNQRAA7wnXeH0lRlbgyszI4/edit?usp=sharing&quot;&gt;iOS 设计模式简介&lt;/a&gt;』讲座&lt;/li&gt;
+&lt;li&gt;参加「&lt;a href=&quot;http://segmentfault.com/e/geekon-2013&quot;&gt;极客行动&lt;/a&gt;」并完成一个公益项目&lt;/li&gt;
+&lt;li&gt;在 Evernote 中记录了220篇技术笔记&lt;/li&gt;
+&lt;li&gt;熟练 Git 及其理念&lt;/li&gt;
+&lt;li&gt;Vim 入门
     
     </summary>
+    
     
       <category term="iOS" scheme="http://rensisi.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[iOS 火星坐标问题]]></title>
+    <title>iOS 火星坐标问题</title>
     <link href="http://rensisi.com/2013/06/27/iOS-mars-coordinate/"/>
     <id>http://rensisi.com/2013/06/27/iOS-mars-coordinate/</id>
     <published>2013-06-26T16:00:00.000Z</published>
     <updated>2015-11-25T12:53:40.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="3_u79CD_u5750_u6807"><a href="#3_u79CD_u5750_u6807" class="headerlink" title="3种坐标"></a>3种坐标</h4><ul>
-<li><a href="http://zh.wikipedia.org/wiki/WGS84" target="_blank" rel="external">地球坐标（WGS84）</a><ul>
-<li>国际标准，GPS 标准从 GPS 设备中取出的原始数据是就是这个</li>
-<li>国际地图提供商一般使用的也是这个</li>
-</ul>
-</li>
-<li><a href="http://baike.baidu.com/view/5669921.htm" target="_blank" rel="external">火星坐标（GCJ-02）</a><ul>
-<li>中国标准，行货 GPS 设备取出的最终数据是这个</li>
-<li>加入随机的偏差</li>
-<li>国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。</li>
-</ul>
-</li>
-<li><a href="http://developer.baidu.com/map/question.htm#qa004" target="_blank" rel="external">百度坐标 (BD-09)</a><ul>
-<li>百度标准，在 GCJ-02 基础上，进行了 BD-09 二次加密</li>
-<li>需要通过坐标转换接口进行转换</li>
-</ul>
-</li>
-</ul>
-<a id="more"></a>
-<h4 id="iOS__u73B0_u72B6"><a href="#iOS__u73B0_u72B6" class="headerlink" title="iOS 现状"></a>iOS 现状</h4><ul>
-<li>获取经纬度（GPS）<ul>
-<li>火星坐标 <code>MKMapView</code></li>
-<li>地球坐标 <code>CLLocationManager</code></li>
-</ul>
-</li>
-<li>显示经纬度（地图）<ul>
-<li>火星坐标<ul>
-<li>iOS 地图</li>
-<li>Google 地图</li>
-<li>高德、搜搜、阿里云等</li>
-</ul>
-</li>
-<li>地球坐标<ul>
-<li>Google earth（国外地图应该都是）</li>
-</ul>
-</li>
-<li>百度坐标<ul>
-<li>百度地图</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="u89E3_u51B3_u65B9_u6848"><a href="#u89E3_u51B3_u65B9_u6848" class="headerlink" title="解决方案"></a>解决方案</h4><ul>
-<li>国内存储用火星坐标，百度地图可以转换为火星坐标</li>
-<li><code>CLLocationManager</code> 获取的坐标转换为火星坐标，算法 <a href="https://gist.github.com/zvving/5476132" target="_blank" rel="external">CLLocation+Sino</a></li>
-<li>几个互相转换算法<ul>
-<li>地图坐标 -&gt; 火星坐标：<a href="http://blog.csdn.net/coolypf/article/details/8686588" target="_blank" rel="external">地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法</a></li>
-<li>火星坐标 &lt;-&gt; 百度坐标：<a href="http://blog.woodbunny.com/post-68.html" target="_blank" rel="external">火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换算法</a></li>
-<li>火星坐标 -&gt; 地球坐标：<ul>
-<li><del>iOS 私有 API <code>_applyChinaLocationShift:</code></del>（已不可用）</li>
-<li>通过不断采样的方式建立一个纠偏数据库，数据库随着采样精度的不同大小差距很大，据说有人做个了近1G的数据库。我自己用的一个100KB左右的数据库感觉效果就很不错了，采样精度为每0.5经(纬)度采样一次。目前该数据库在网上有流传。</li>
-<li>据说有人使用Matlib对数据库做了个拟合函数，本人无力没搜到这个函数，求补充</li>
-<li>使用第三方的网络API，如MapABC，原来Google也有不过现在已经关闭了。这样会使得定位依赖于网络。</li>
-<li>使用经过国家授权的校偏组件⋯⋯</li>
-<li>让用户手动修正，对于某些特定应用也许是种不错的方法。</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h4><ul>
-<li><a href="http://yach.me/blog/2011/11/09/huo-xing-zuo-biao-xi-wen-ti-zai-iosxia-de-xiu/" target="_blank" rel="external">火星坐标系问题在iOS下的修正</a></li>
-<li><a href="http://blog.woodbunny.com/post-67.html" target="_blank" rel="external">借助百度地图转换火星坐标的研究</a></li>
-</ul>
-]]></content>
+    
+    <content type="html">&lt;h4 id=&quot;3种坐标&quot;&gt;&lt;a href=&quot;#3种坐标&quot; class=&quot;headerlink&quot; title=&quot;3种坐标&quot;&gt;&lt;/a&gt;3种坐标&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://zh.wikipedia.org/wiki/WGS84&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;地球坐标（WGS84）&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;国际标准，GPS 标准从 GPS 设备中取出的原始数据是就是这个&lt;/li&gt;
+&lt;li&gt;国际地图提供商一般使用的也是这个&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://baike.baidu.com/view/5669921.htm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;火星坐标（GCJ-02）&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;中国标准，行货 GPS 设备取出的最终数据是这个&lt;/li&gt;
+&lt;li&gt;加入随机的偏差&lt;/li&gt;
+&lt;li&gt;国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://developer.baidu.com/map/question.htm#qa004&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;百度坐标 (BD-09)&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;百度标准，在 GCJ-02 基础上，进行了 BD-09 二次加密&lt;/li&gt;
+&lt;li&gt;需要通过坐标转换接口进行转换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h4 id=&quot;iOS-现状&quot;&gt;&lt;a href=&quot;#iOS-现状&quot; class=&quot;headerlink&quot; title=&quot;iOS 现状&quot;&gt;&lt;/a&gt;iOS 现状&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;获取经纬度（GPS）&lt;ul&gt;
+&lt;li&gt;火星坐标 &lt;code&gt;MKMapView&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;地球坐标 &lt;code&gt;CLLocationManager&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;显示经纬度（地图）&lt;ul&gt;
+&lt;li&gt;火星坐标&lt;ul&gt;
+&lt;li&gt;iOS 地图&lt;/li&gt;
+&lt;li&gt;Google 地图&lt;/li&gt;
+&lt;li&gt;高德、搜搜、阿里云等&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;地球坐标&lt;ul&gt;
+&lt;li&gt;Google earth（国外地图应该都是）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;百度坐标&lt;ul&gt;
+&lt;li&gt;百度地图&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;解决方案&quot;&gt;&lt;a href=&quot;#解决方案&quot; class=&quot;headerlink&quot; title=&quot;解决方案&quot;&gt;&lt;/a&gt;解决方案&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;国内存储用火星坐标，百度地图可以转换为火星坐标&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;CLLocationManager&lt;/code&gt; 获取的坐标转换为火星坐标，算法 &lt;a href=&quot;https://gist.github.com/zvving/5476132&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;CLLocation+Sino&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;几个互相转换算法&lt;ul&gt;
+&lt;li&gt;地图坐标 -&amp;gt; 火星坐标：&lt;a href=&quot;http://blog.csdn.net/coolypf/article/details/8686588&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;地球坐标系 (WGS-84) 到火星坐标系 (GCJ-02) 的转换算法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;火星坐标 &amp;lt;-&amp;gt; 百度坐标：&lt;a href=&quot;http://blog.woodbunny.com/post-68.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;火星坐标系 (GCJ-02) 与百度坐标系 (BD-09) 的转换算法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;火星坐标 -&amp;gt; 地球坐标：&lt;ul&gt;
+&lt;li&gt;&lt;del&gt;iOS 私有 API &lt;code&gt;_applyChinaLocationShift:&lt;/code&gt;&lt;/del&gt;（已不可用）&lt;/li&gt;
+&lt;li&gt;通过不断采样的方式建立一个纠偏数据库，数据库随着采样精度的不同大小差距很大，据说有人做个了近1G的数据库。我自己用的一个100KB左右的数据库感觉效果就很不错了，采样精度为每0.5经(纬)度采样一次。目前该数据库在网上有流传。&lt;/li&gt;
+&lt;li&gt;据说有人使用Matlib对数据库做了个拟合函数，本人无力没搜到这个函数，求补充&lt;/li&gt;
+&lt;li&gt;使用第三方的网络API，如MapABC，原来Google也有不过现在已经关闭了。这样会使得定位依赖于网络。&lt;/li&gt;
+&lt;li&gt;使用经过国家授权的校偏组件⋯⋯&lt;/li&gt;
+&lt;li&gt;让用户手动修正，对于某些特定应用也许是种不错的方法。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Links&quot;&gt;&lt;a href=&quot;#Links&quot; class=&quot;headerlink&quot; title=&quot;Links&quot;&gt;&lt;/a&gt;Links&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://yach.me/blog/2011/11/09/huo-xing-zuo-biao-xi-wen-ti-zai-iosxia-de-xiu/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;火星坐标系问题在iOS下的修正&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.woodbunny.com/post-67.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;借助百度地图转换火星坐标的研究&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[<h4 id="3_u79CD_u5750_u6807"><a href="#3_u79CD_u5750_u6807" class="headerlink" title="3种坐标"></a>3种坐标</h4><ul>
-<li><a href="http://zh.wikipedia.org/wiki/WGS84">地球坐标（WGS84）</a><ul>
-<li>国际标准，GPS 标准从 GPS 设备中取出的原始数据是就是这个</li>
-<li>国际地图提供商一般使用的也是这个</li>
-</ul>
-</li>
-<li><a href="http://baike.baidu.com/view/5669921.htm">火星坐标（GCJ-02）</a><ul>
-<li>中国标准，行货 GPS 设备取出的最终数据是这个</li>
-<li>加入随机的偏差</li>
-<li>国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。</li>
-</ul>
-</li>
-<li><a href="http://developer.baidu.com/map/question.htm#qa004">百度坐标 (BD-09)</a><ul>
-<li>百度标准，在 GCJ-02 基础上，进行了 BD-09 二次加密</li>
-<li>需要通过坐标转换接口进行转换</li>
-</ul>
-</li>
-</ul>]]>
+    
+      &lt;h4 id=&quot;3种坐标&quot;&gt;&lt;a href=&quot;#3种坐标&quot; class=&quot;headerlink&quot; title=&quot;3种坐标&quot;&gt;&lt;/a&gt;3种坐标&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://zh.wikipedia.org/wiki/WGS84&quot;&gt;地球坐标（WGS84）&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;国际标准，GPS 标准从 GPS 设备中取出的原始数据是就是这个&lt;/li&gt;
+&lt;li&gt;国际地图提供商一般使用的也是这个&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://baike.baidu.com/view/5669921.htm&quot;&gt;火星坐标（GCJ-02）&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;中国标准，行货 GPS 设备取出的最终数据是这个&lt;/li&gt;
+&lt;li&gt;加入随机的偏差&lt;/li&gt;
+&lt;li&gt;国内出版的各种地图系统（包括电子形式），必须至少采用GCJ-02对地理位置进行首次加密。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://developer.baidu.com/map/question.htm#qa004&quot;&gt;百度坐标 (BD-09)&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;百度标准，在 GCJ-02 基础上，进行了 BD-09 二次加密&lt;/li&gt;
+&lt;li&gt;需要通过坐标转换接口进行转换&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
+    
     
       <category term="iOS" scheme="http://rensisi.com/tags/iOS/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Git 笔记]]></title>
+    <title>Git 笔记</title>
     <link href="http://rensisi.com/2012/12/28/Git-note/"/>
     <id>http://rensisi.com/2012/12/28/Git-note/</id>
     <published>2012-12-28T03:36:25.000Z</published>
     <updated>2015-11-25T12:26:41.000Z</updated>
-    <content type="html"><![CDATA[<h4 id="u57FA_u672C_u6B65_u9AA4"><a href="#u57FA_u672C_u6B65_u9AA4" class="headerlink" title="基本步骤"></a>基本步骤</h4><ul>
-<li><code>$ git init</code> （初始化，创建新的git仓库）</li>
-<li><code>$ git add &lt;filename&gt;</code> （将改动添加到缓存区Index）</li>
-<li><code>$ git add -u</code>（automatically stage tracked files including deleting the previously tracked files）</li>
-<li><code>$ git commit -m</code> “改动信息”（实际提交改动到HEAD）</li>
-<li><code>$ git commit -v</code> (可在输入 log 时在下方显示改动内容)</li>
-<li><code>$ git push origin</code> &lt;某个分支&gt;（将本地仓库的改动origin提交到某个分支）</li>
-<li><code>$ git remote add origin &lt;server&gt;</code> （如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）<a id="more"></a>
-</li>
-</ul>
-<h4 id="u5206_u652F"><a href="#u5206_u652F" class="headerlink" title="分支"></a>分支</h4><ul>
-<li><code>$ git checkout -b</code> &lt;分支名&gt;（创建分支并切换过去）</li>
-<li><code>$ git checkout master</code>（切换回master分支）</li>
-<li><code>$ git branch -d</code> &lt;分支名&gt;（删除某分支）</li>
-</ul>
-<h4 id="u66F4_u65B0_u4E0E_u5408_u5E76"><a href="#u66F4_u65B0_u4E0E_u5408_u5E76" class="headerlink" title="更新与合并"></a>更新与合并</h4><ul>
-<li><code>$ git pull</code>（更新本地仓库至最新改动）</li>
-<li><code>$ git merge &lt;branch&gt;</code>（合并其他分支到当前分支）</li>
-<li><code>$ git diff &lt;source_branch&gt;&lt;target_branch&gt;</code>（合并时会有冲突conflicts，需要手动修改，用此命令查看不同）</li>
-<li><code>$ git mergetool</code>（使用工具修改冲突的文件，推荐<a href="http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools" target="_blank" rel="external">P4merge</a>）</li>
-</ul>
-<h4 id="u67E5_u770B_log"><a href="#u67E5_u770B_log" class="headerlink" title="查看 log"></a>查看 log</h4><ul>
-<li><code>$ git log -n 1</code> （查看最后一次提交）</li>
-<li><code>$ git log -n 1 --stat</code> （查看最近一次提交所有更改过的文件）</li>
-<li><code>$ git log -n 1 -p</code> （最近一次提交所有更改的细节）</li>
-<li><code>$ git log -p &lt;filename&gt;</code> （某个文件的提交记录）</li>
-<li><code>$ git shortlog [-n] [-s] [-e] [-w] [rev-opts] [--] [... ]</code></li>
-</ul>
-<h4 id="u6807_u7B7E"><a href="#u6807_u7B7E" class="headerlink" title="标签"></a>标签</h4><ul>
-<li><code>$ git tag</code> （列出现有标签）</li>
-<li><code>$ git tag -a -m &lt;message&gt;</code> （带有信息的标签）</li>
-<li><code>$ git tag</code> （为某个 commit 打上标签）</li>
-<li><code>$ git push --tags</code> （默认的 push 操作不会上传 tag）</li>
-<li><code>$ git push -d origin</code> （删除某个 tag）</li>
-</ul>
-<h4 id="u884D_u5408_28rebase_29"><a href="#u884D_u5408_28rebase_29" class="headerlink" title="衍合(rebase)"></a>衍合(rebase)</h4><blockquote>
-<p>把在一个分支里提交的改变移到另一个分支里重放一遍.<a href="http://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E8%A1%8D%E5%90%88" target="_blank" rel="external">参考</a></p>
-</blockquote>
-<ul>
-<li><code>$ git rebase &lt;branch_to_be_rebased&gt;</code></li>
-<li><code>$ git rebase --continue</code>（有时会有冲突，用 mergetool<br>解决后用此命令完成 rebase）</li>
-</ul>
-<h4 id="Submodule"><a href="#Submodule" class="headerlink" title="Submodule"></a>Submodule</h4><blockquote>
-<p>Submodule 的文件只存储在本地，主仓库只存储它的 URL 和它的某个 commit SHA1 值。<br>将某个仓库设为 submodule</p>
-</blockquote>
-<ol>
-<li><code>$ git submodule add git://github.com/my/submodule.git ./submodule</code></li>
-<li><code>$  git submodule update --init</code>  取得新仓库的 submodule</li>
-<li><code>$ git submodule update --recursive --init</code> 取得子仓库的更新</li>
-<li><code>$ cd ./submodule</code></li>
-<li><code>$ git pull origin master</code></li>
-</ol>
-<h4 id="Github_fork__u9879_u76EE_u540E_u66F4_u65B0"><a href="#Github_fork__u9879_u76EE_u540E_u66F4_u65B0" class="headerlink" title="Github fork 项目后更新"></a>Github fork 项目后更新</h4><ol>
-<li><code>$ git remote add upstream https://原始项目地址</code></li>
-<li><code>$ git fetch upstream</code></li>
-<li><code>$ git checkout master</code></li>
-<li><code>$ git merge upstream/master</code></li>
-<li><code>$ git push</code></li>
-</ol>
-<h4 id="u4FEE_u6539_u8FDC_u7A0B_u4ED3_u5E93_u5730_u5740"><a href="#u4FEE_u6539_u8FDC_u7A0B_u4ED3_u5E93_u5730_u5740" class="headerlink" title="修改远程仓库地址"></a>修改远程仓库地址</h4><ol>
-<li>先查看改名前的URL下的版本名：<code>$ git remote -v</code></li>
-<li>然后设置新的URL：<code>$ git remote set -url 版本名 新的URL</code></li>
-<li>或者删掉原来的版本，再add进新的URL：<ol>
-<li><code>$ git remote rm 版本名</code></li>
-<li><code>$ git remote add 版本名 新的URL</code></li>
-</ol>
-</li>
-</ol>
-<h4 id="Git_u56DE_u6EFE"><a href="#Git_u56DE_u6EFE" class="headerlink" title="Git回滾"></a>Git回滾</h4><ol>
-<li><code>$ git reset --hard &lt;commit_id&gt;</code></li>
-<li><code>$ git push origin HEAD --force</code></li>
-<li>根据 –soft –mixed –hard，会对working tree和index和HEAD进行重置:<ul>
-<li><code>git reset –mixed</code>：此为默认方式，不带任何参数的git reset，回退到某个版本，只保留源码，回退commit和index信息</li>
-<li><code>git reset –soft</code>：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可</li>
-<li><code>git reset –hard</code>：彻底回退到某个版本，本地的源码也会变为上一个版本的内容<blockquote>
-<p>HEAD 最近一个提交<br>HEAD^ 上一个提交<br><commit_id> 每次commit的SHA1值. 可以用<code>git log</code>看到,也可以在commit标签页里找到.</commit_id></p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ol>
-<h4 id="Changing_the_Last_Commit_Message"><a href="#Changing_the_Last_Commit_Message" class="headerlink" title="Changing the Last Commit Message"></a>Changing the Last Commit Message</h4><ul>
-<li><code>$ git commit --amend</code></li>
-</ul>
-<h4 id="Cleaning_up_local_repository"><a href="#Cleaning_up_local_repository" class="headerlink" title="Cleaning up local repository"></a>Cleaning up local repository</h4><ul>
-<li><code>$ git gc --prune=now</code></li>
-<li><code>$ git remote prune origin</code></li>
-</ul>
-<h4 id="Specifying_Dates"><a href="#Specifying_Dates" class="headerlink" title="Specifying Dates"></a>Specifying Dates</h4><ul>
-<li><code>$ GIT_AUTHOR_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;
-GIT_COMMITTER_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot; git commit -v</code></li>
-<li><code>$ GIT_AUTHOR_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;
-GIT_COMMITTER_DATE=&quot;Mon Oct 27 15:29:19 2014 +0800&quot; git commit --amend
---date=&quot;Mon Oct 27 15:29:19 2014 +0800&quot;</code></li>
-</ul>
-<h4 id="Change_the_author_of_a_commit"><a href="#Change_the_author_of_a_commit" class="headerlink" title="Change the author of a commit"></a>Change the author of a commit</h4><ol>
-<li><code>$ git rebase -i -p &lt;some HEAD before all of your bad commits&gt;</code></li>
-<li>标记需要更改的 commit 为 <code>edit</code></li>
-<li><code>$ git commit --amend --author=&quot;New Author Name &lt;email@address.com&gt;&quot;</code><ol>
-<li>如果只需要改上一个 commit，执行这一步就可以了，不需要 rebase</li>
-<li>如果要同时改变 author 和 committer：<br><code>$ git -c user.name=&quot;New Author Name&quot; -c
-user.email=email@address.com commit --amend --reset-author</code></li>
-</ol>
-</li>
-<li><code>$ git rebase --continue</code></li>
-</ol>
-<h4 id="u521B_u5EFA_u65B0_u7684_u7A7A_u5206_u652F"><a href="#u521B_u5EFA_u65B0_u7684_u7A7A_u5206_u652F" class="headerlink" title="创建新的空分支"></a>创建新的空分支</h4><ol>
-<li>$ git symbolic-ref HEAD refs/heads/<newbranch></newbranch></li>
-<li>$ rm .git/index</li>
-<li>$ git clean -fdx</li>
-<li>&lt; do work &gt;</li>
-<li>$ git add .</li>
-<li>$ git commit -v</li>
-</ol>
-<h4 id="u5176_u4ED6_3A"><a href="#u5176_u4ED6_3A" class="headerlink" title="其他:"></a>其他:</h4><ul>
-<li>分支名大小写问题：</li>
-</ul>
-<blockquote>
-<p>git pull 时出现如下错误，原因是有人在 Linux 下提交了相同名字但大小写不同的分支，因为 Linux 是大小写不敏感的，但到了 OS X 或 Windows 下，拉取的时候就会出错<br>    <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">! bacca66..6b9508a custom/100acc -&#62; origin/custom/100acc (unable to&#10;update local ref)&#10;error: Ref refs/remotes/origin/custom/985 is at&#10;a2a6e32bfcef6e429c5e42fc7973f1d6e57eaae8 but expected&#10;d3c05036b295f6539870683e4c794cd9c3ae1579</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<ol>
-<li><code>$ rm .git/refs/remotes/origin/custom/100acc</code></li>
-<li><code>$ git fetch --prune origin</code></li>
-</ol>
-]]></content>
+    
+    <content type="html">&lt;h4 id=&quot;基本步骤&quot;&gt;&lt;a href=&quot;#基本步骤&quot; class=&quot;headerlink&quot; title=&quot;基本步骤&quot;&gt;&lt;/a&gt;基本步骤&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ git init&lt;/code&gt; （初始化，创建新的git仓库）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git add &amp;lt;filename&amp;gt;&lt;/code&gt; （将改动添加到缓存区Index）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git add -u&lt;/code&gt;（automatically stage tracked files including deleting the previously tracked files）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git commit -m&lt;/code&gt; “改动信息”（实际提交改动到HEAD）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git commit -v&lt;/code&gt; (可在输入 log 时在下方显示改动内容)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git push origin&lt;/code&gt; &amp;lt;某个分支&amp;gt;（将本地仓库的改动origin提交到某个分支）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git remote add origin &amp;lt;server&amp;gt;&lt;/code&gt; （如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;分支&quot;&gt;&lt;a href=&quot;#分支&quot; class=&quot;headerlink&quot; title=&quot;分支&quot;&gt;&lt;/a&gt;分支&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ git checkout -b&lt;/code&gt; &amp;lt;分支名&amp;gt;（创建分支并切换过去）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git checkout master&lt;/code&gt;（切换回master分支）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git branch -d&lt;/code&gt; &amp;lt;分支名&amp;gt;（删除某分支）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;更新与合并&quot;&gt;&lt;a href=&quot;#更新与合并&quot; class=&quot;headerlink&quot; title=&quot;更新与合并&quot;&gt;&lt;/a&gt;更新与合并&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ git pull&lt;/code&gt;（更新本地仓库至最新改动）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git merge &amp;lt;branch&amp;gt;&lt;/code&gt;（合并其他分支到当前分支）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git diff &amp;lt;source_branch&amp;gt;&amp;lt;target_branch&amp;gt;&lt;/code&gt;（合并时会有冲突conflicts，需要手动修改，用此命令查看不同）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git mergetool&lt;/code&gt;（使用工具修改冲突的文件，推荐&lt;a href=&quot;http://www.perforce.com/product/components/perforce-visual-merge-and-diff-tools&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;P4merge&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;查看-log&quot;&gt;&lt;a href=&quot;#查看-log&quot; class=&quot;headerlink&quot; title=&quot;查看 log&quot;&gt;&lt;/a&gt;查看 log&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ git log -n 1&lt;/code&gt; （查看最后一次提交）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git log -n 1 --stat&lt;/code&gt; （查看最近一次提交所有更改过的文件）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git log -n 1 -p&lt;/code&gt; （最近一次提交所有更改的细节）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git log -p &amp;lt;filename&amp;gt;&lt;/code&gt; （某个文件的提交记录）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git shortlog [-n] [-s] [-e] [-w] [rev-opts] [--] [... ]&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;标签&quot;&gt;&lt;a href=&quot;#标签&quot; class=&quot;headerlink&quot; title=&quot;标签&quot;&gt;&lt;/a&gt;标签&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ git tag&lt;/code&gt; （列出现有标签）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git tag -a -m &amp;lt;message&amp;gt;&lt;/code&gt; （带有信息的标签）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git tag&lt;/code&gt; （为某个 commit 打上标签）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git push --tags&lt;/code&gt; （默认的 push 操作不会上传 tag）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git push -d origin&lt;/code&gt; （删除某个 tag）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;衍合-rebase&quot;&gt;&lt;a href=&quot;#衍合-rebase&quot; class=&quot;headerlink&quot; title=&quot;衍合(rebase)&quot;&gt;&lt;/a&gt;衍合(rebase)&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;把在一个分支里提交的改变移到另一个分支里重放一遍.&lt;a href=&quot;http://git-scm.com/book/zh/v1/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%9A%84%E8%A1%8D%E5%90%88&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;参考&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ git rebase &amp;lt;branch_to_be_rebased&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git rebase --continue&lt;/code&gt;（有时会有冲突，用 mergetool&lt;br&gt;解决后用此命令完成 rebase）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Submodule&quot;&gt;&lt;a href=&quot;#Submodule&quot; class=&quot;headerlink&quot; title=&quot;Submodule&quot;&gt;&lt;/a&gt;Submodule&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;Submodule 的文件只存储在本地，主仓库只存储它的 URL 和它的某个 commit SHA1 值。&lt;br&gt;将某个仓库设为 submodule&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;$ git submodule add git://github.com/my/submodule.git ./submodule&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$  git submodule update --init&lt;/code&gt;  取得新仓库的 submodule&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git submodule update --recursive --init&lt;/code&gt; 取得子仓库的更新&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ cd ./submodule&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git pull origin master&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;Github-fork-项目后更新&quot;&gt;&lt;a href=&quot;#Github-fork-项目后更新&quot; class=&quot;headerlink&quot; title=&quot;Github fork 项目后更新&quot;&gt;&lt;/a&gt;Github fork 项目后更新&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;$ git remote add upstream https://原始项目地址&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git fetch upstream&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git checkout master&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git merge upstream/master&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git push&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;修改远程仓库地址&quot;&gt;&lt;a href=&quot;#修改远程仓库地址&quot; class=&quot;headerlink&quot; title=&quot;修改远程仓库地址&quot;&gt;&lt;/a&gt;修改远程仓库地址&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;先查看改名前的URL下的版本名：&lt;code&gt;$ git remote -v&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;然后设置新的URL：&lt;code&gt;$ git remote set -url 版本名 新的URL&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;或者删掉原来的版本，再add进新的URL：&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;$ git remote rm 版本名&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git remote add 版本名 新的URL&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;Git回滾&quot;&gt;&lt;a href=&quot;#Git回滾&quot; class=&quot;headerlink&quot; title=&quot;Git回滾&quot;&gt;&lt;/a&gt;Git回滾&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;$ git reset --hard &amp;lt;commit_id&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git push origin HEAD --force&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;根据 –soft –mixed –hard，会对working tree和index和HEAD进行重置:&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;git reset –mixed&lt;/code&gt;：此为默认方式，不带任何参数的git reset，回退到某个版本，只保留源码，回退commit和index信息&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset –soft&lt;/code&gt;：回退到某个版本，只回退了commit的信息，不会恢复到index file一级。如果还要提交，直接commit即可&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;git reset –hard&lt;/code&gt;：彻底回退到某个版本，本地的源码也会变为上一个版本的内容&lt;blockquote&gt;
+&lt;p&gt;HEAD 最近一个提交&lt;br&gt;HEAD^ 上一个提交&lt;br&gt;&lt;commit_id&gt; 每次commit的SHA1值. 可以用&lt;code&gt;git log&lt;/code&gt;看到,也可以在commit标签页里找到.&lt;/commit_id&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;Changing-the-Last-Commit-Message&quot;&gt;&lt;a href=&quot;#Changing-the-Last-Commit-Message&quot; class=&quot;headerlink&quot; title=&quot;Changing the Last Commit Message&quot;&gt;&lt;/a&gt;Changing the Last Commit Message&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ git commit --amend&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Cleaning-up-local-repository&quot;&gt;&lt;a href=&quot;#Cleaning-up-local-repository&quot; class=&quot;headerlink&quot; title=&quot;Cleaning up local repository&quot;&gt;&lt;/a&gt;Cleaning up local repository&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ git gc --prune=now&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git remote prune origin&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Specifying-Dates&quot;&gt;&lt;a href=&quot;#Specifying-Dates&quot; class=&quot;headerlink&quot; title=&quot;Specifying Dates&quot;&gt;&lt;/a&gt;Specifying Dates&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ GIT_AUTHOR_DATE=&amp;quot;Mon Oct 27 15:29:19 2014 +0800&amp;quot;
+GIT_COMMITTER_DATE=&amp;quot;Mon Oct 27 15:29:19 2014 +0800&amp;quot; git commit -v&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ GIT_AUTHOR_DATE=&amp;quot;Mon Oct 27 15:29:19 2014 +0800&amp;quot;
+GIT_COMMITTER_DATE=&amp;quot;Mon Oct 27 15:29:19 2014 +0800&amp;quot; git commit --amend
+--date=&amp;quot;Mon Oct 27 15:29:19 2014 +0800&amp;quot;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&quot;Change-the-author-of-a-commit&quot;&gt;&lt;a href=&quot;#Change-the-author-of-a-commit&quot; class=&quot;headerlink&quot; title=&quot;Change the author of a commit&quot;&gt;&lt;/a&gt;Change the author of a commit&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;$ git rebase -i -p &amp;lt;some HEAD before all of your bad commits&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;标记需要更改的 commit 为 &lt;code&gt;edit&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git commit --amend --author=&amp;quot;New Author Name &amp;lt;email@address.com&amp;gt;&amp;quot;&lt;/code&gt;&lt;ol&gt;
+&lt;li&gt;如果只需要改上一个 commit，执行这一步就可以了，不需要 rebase&lt;/li&gt;
+&lt;li&gt;如果要同时改变 author 和 committer：&lt;br&gt;&lt;code&gt;$ git -c user.name=&amp;quot;New Author Name&amp;quot; -c
+user.email=email@address.com commit --amend --reset-author&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git rebase --continue&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;创建新的空分支&quot;&gt;&lt;a href=&quot;#创建新的空分支&quot; class=&quot;headerlink&quot; title=&quot;创建新的空分支&quot;&gt;&lt;/a&gt;创建新的空分支&lt;/h4&gt;&lt;ol&gt;
+&lt;li&gt;$ git symbolic-ref HEAD refs/heads/&lt;newbranch&gt;&lt;/newbranch&gt;&lt;/li&gt;
+&lt;li&gt;$ rm .git/index&lt;/li&gt;
+&lt;li&gt;$ git clean -fdx&lt;/li&gt;
+&lt;li&gt;&amp;lt; do work &amp;gt;&lt;/li&gt;
+&lt;li&gt;$ git add .&lt;/li&gt;
+&lt;li&gt;$ git commit -v&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他:&quot;&gt;&lt;/a&gt;其他:&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;分支名大小写问题：&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;git pull 时出现如下错误，原因是有人在 Linux 下提交了相同名字但大小写不同的分支，因为 Linux 是大小写不敏感的，但到了 OS X 或 Windows 下，拉取的时候就会出错&lt;br&gt;    &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;! bacca66..6b9508a custom/100acc -&amp;#62; origin/custom/100acc (unable to&amp;#10;update local ref)&amp;#10;error: Ref refs/remotes/origin/custom/985 is at&amp;#10;a2a6e32bfcef6e429c5e42fc7973f1d6e57eaae8 but expected&amp;#10;d3c05036b295f6539870683e4c794cd9c3ae1579&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;$ rm .git/refs/remotes/origin/custom/100acc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git fetch --prune origin&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
     <summary type="html">
-    <![CDATA[<h4 id="u57FA_u672C_u6B65_u9AA4"><a href="#u57FA_u672C_u6B65_u9AA4" class="headerlink" title="基本步骤"></a>基本步骤</h4><ul>
-<li><code>$ git init</code> （初始化，创建新的git仓库）</li>
-<li><code>$ git add &lt;filename&gt;</code> （将改动添加到缓存区Index）</li>
-<li><code>$ git add -u</code>（automatically stage tracked files including deleting the previously tracked files）</li>
-<li><code>$ git commit -m</code> “改动信息”（实际提交改动到HEAD）</li>
-<li><code>$ git commit -v</code> (可在输入 log 时在下方显示改动内容)</li>
-<li><code>$ git push origin</code> &lt;某个分支&gt;（将本地仓库的改动origin提交到某个分支）</li>
-<li><code>$ git remote add origin &lt;server&gt;</code> （如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）]]>
+    
+      &lt;h4 id=&quot;基本步骤&quot;&gt;&lt;a href=&quot;#基本步骤&quot; class=&quot;headerlink&quot; title=&quot;基本步骤&quot;&gt;&lt;/a&gt;基本步骤&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;$ git init&lt;/code&gt; （初始化，创建新的git仓库）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git add &amp;lt;filename&amp;gt;&lt;/code&gt; （将改动添加到缓存区Index）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git add -u&lt;/code&gt;（automatically stage tracked files including deleting the previously tracked files）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git commit -m&lt;/code&gt; “改动信息”（实际提交改动到HEAD）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git commit -v&lt;/code&gt; (可在输入 log 时在下方显示改动内容)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git push origin&lt;/code&gt; &amp;lt;某个分支&amp;gt;（将本地仓库的改动origin提交到某个分支）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;$ git remote add origin &amp;lt;server&amp;gt;&lt;/code&gt; （如果还未克隆现有仓库，可用此命令连接到服务器上的某个repo）
     
     </summary>
     
-      <category term="Git" scheme="http://rensisi.com/tags/Git/"/>
-    
       <category term="Git" scheme="http://rensisi.com/categories/Git/"/>
+    
+    
+      <category term="Git" scheme="http://rensisi.com/tags/Git/"/>
     
   </entry>
   
